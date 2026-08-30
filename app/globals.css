@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  /* Palette drawn from the Jamia crest and banner artwork */
+  --color-navy-950: #05192c;
+  --color-navy-900: #082741;
+  --color-navy-800: #0d3a5e;
+  --color-navy-700: #134e7c;
+  --color-teal-600: #1a6b92;
+  --color-teal-500: #2589af;
+  --color-cyan-400: #4cb2ce;
+  --color-cyan-300: #7fcbdf;
+  --color-cyan-200: #a9dcea;
+  --color-sky-100: #dceef6;
+  --color-sky-50: #eff8fb;
+  --color-gold-600: #a8861d;
+  --color-gold-500: #c9a227;
+  --color-gold-400: #ddbb55;
+  --color-gold-300: #e9cd7c;
+  --color-gold-200: #f0e0ab;
+  --color-maroon-700: #8e1b24;
+
+  --font-bangla: var(--font-hind), "Noto Sans Bengali", system-ui, sans-serif;
+  --font-arabic: var(--font-amiri), "Traditional Arabic", serif;
+  --font-display: var(--font-cormorant), Georgia, serif;
+
+  --shadow-soft: 0 1px 2px rgb(8 39 65 / 0.04), 0 8px 24px -8px rgb(8 39 65 / 0.12);
+  --shadow-lift: 0 2px 4px rgb(8 39 65 / 0.06), 0 24px 48px -16px rgb(8 39 65 / 0.22);
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-rise: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
+}
+
+body {
+  font-family: var(--font-bangla);
+  background: var(--color-sky-50);
+  color: var(--color-navy-900);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Bangla sits low on the baseline; a little extra leading keeps it readable. */
+:lang(bn) { line-height: 1.85; }
+
+.font-arabic { font-family: var(--font-arabic); direction: rtl; }
+.font-display { font-family: var(--font-display); }
+
+/* ── Ornaments ──────────────────────────────────────────────────────────
+   A girih-style eight-point star lattice, used as a faint ground behind
+   dark sections, and a finer version for light ones. */
+
+.pattern-girih {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='1'%3E%3Cpath d='M40 0 L52 28 L80 40 L52 52 L40 80 L28 52 L0 40 L28 28 Z'/%3E%3Cpath d='M40 8 L48 32 L72 40 L48 48 L40 72 L32 48 L8 40 L32 32 Z'/%3E%3Crect x='20' y='20' width='40' height='40' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+.pattern-girih-dark {
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%230d3a5e' stroke-width='1'%3E%3Cpath d='M40 0 L52 28 L80 40 L52 52 L40 80 L28 52 L0 40 L28 28 Z'/%3E%3Cpath d='M40 8 L48 32 L72 40 L48 48 L40 72 L32 48 L8 40 L32 32 Z'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 80px 80px;
+}
+
+/* A pointed mihrab arch — used to frame portraits and feature imagery. */
+.mask-arch {
+  border-radius: 46% 46% 0.75rem 0.75rem / 34% 34% 0.75rem 0.75rem;
+}
+
+.mask-arch-tall {
+  border-radius: 50% 50% 1rem 1rem / 42% 42% 1rem 1rem;
+}
+
+/* Gold hairline flourish used under section headings. */
+.rule-gold {
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--color-gold-500) 20%,
+    var(--color-gold-400) 50%,
+    var(--color-gold-500) 80%,
+    transparent
+  );
+}
+
+/* Eyebrows and small labels. Bangla has no letter case, and wide tracking
+   pulls its conjuncts apart, so both are applied only in English. */
+.caps { font-weight: 700; }
+
+html:lang(en) .caps {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.text-balance { text-wrap: balance; }
+
+::selection {
+  background: var(--color-gold-200);
+  color: var(--color-navy-950);
+}
+
+/* Focus ring consistent with the palette */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-gold-500);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
