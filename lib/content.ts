@@ -370,7 +370,7 @@ export const notices: Notice[] = [];
 
 export const gallery: { src: string; caption: T }[] = [
   { src: "/campus-signboard.png", caption: { bn: "জামিয়ার সম্মুখভাগ ও নামফলক", en: "The Jamia frontage and its signboard" } },
-  { src: "/cover.jpeg", caption: { bn: "প্রস্তাবিত মাদরাসা ও মসজিদের নকশা", en: "Design of the proposed madrasah and mosque" } },
+  { src: "/banners/campus.jpeg", caption: { bn: "প্রস্তাবিত মাদরাসা ও মসজিদের নকশা", en: "Design of the proposed madrasah and mosque" } },
   { src: "/land/land-1.jpeg", caption: { bn: "জামিয়ার ১০২ শতক স্থায়ী জায়গা", en: "The Jamia's 102 decimals of permanent land" } },
   { src: "/land/land-2.jpeg", caption: { bn: "স্থায়ী জায়গা পরিদর্শনে উস্তাদমণ্ডলী", en: "Teachers visiting the permanent site" } },
   { src: "/banners/new-addition.jpeg", caption: { bn: "রমজান উপলক্ষে বিশেষ দুটি কোর্স", en: "Two special Ramadan courses" } },

@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     description: site.tagline.bn,
     type: "website",
     locale: "bn_BD",
-    images: ["/cover.jpeg"],
+    images: ["/banners/campus.jpeg"],
   },
   icons: { icon: "/logo.jpeg", apple: "/logo.jpeg" },
 };

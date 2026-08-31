@@ -60,7 +60,7 @@ export function AboutView() {
           <div className="space-y-5">
             <div className="mask-arch relative aspect-4/5 overflow-hidden border-4 border-white bg-navy-800 shadow-lift">
               <Image
-                src="/cover.jpeg"
+                src="/banners/campus.jpeg"
                 alt={t({ bn: "প্রস্তাবিত মাদরাসা ও মসজিদের নকশা", en: "The proposed madrasah and mosque" })}
                 fill
                 sizes="(min-width: 1024px) 520px, 90vw"
