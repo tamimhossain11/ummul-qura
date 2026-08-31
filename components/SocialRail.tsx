@@ -33,7 +33,11 @@ export function socialChannels(): Channel[] {
   return list;
 }
 
-/** A slim rail of brand links pinned to the left edge on wide screens. */
+/**
+ * A rail of brand links. On wide screens it sits against the left edge,
+ * vertically centred; on phones that would land on top of the text, so it
+ * moves to the bottom-right corner instead.
+ */
 export function SocialRail() {
   const { t } = useLang();
   const channels = socialChannels();
@@ -42,7 +46,7 @@ export function SocialRail() {
   return (
     <aside
       aria-label={t({ bn: "সামাজিক যোগাযোগ", en: "Social links" })}
-      className="fixed start-0 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-2 ps-2 lg:flex"
+      className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] end-3 z-40 flex flex-col gap-2.5 lg:bottom-auto lg:end-auto lg:start-0 lg:top-1/2 lg:-translate-y-1/2 lg:gap-2 lg:ps-2"
     >
       {channels.map((c) => (
         <a
