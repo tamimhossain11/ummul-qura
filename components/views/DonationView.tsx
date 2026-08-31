@@ -1,19 +1,12 @@
 "use client";
 
 import { donationCauses } from "@/lib/content";
+import { donationChannels } from "@/lib/site";
 import { Icon } from "../Icon";
 import { useLang } from "../LanguageProvider";
 import { Ornament } from "../Ornament";
 import { PageHero } from "../PageHero";
 import { Container, SectionHeading } from "../Section";
-
-/** Payment channels — details are left blank until the madrasah confirms them. */
-const channels = [
-  { icon: "phone" as const, name: { bn: "বিকাশ", en: "bKash" }, value: "" },
-  { icon: "phone" as const, name: { bn: "নগদ", en: "Nagad" }, value: "" },
-  { icon: "phone" as const, name: { bn: "রকেট", en: "Rocket" }, value: "" },
-  { icon: "scroll" as const, name: { bn: "ব্যাংক হিসাব", en: "Bank Account" }, value: "" },
-];
 
 export function DonationView() {
   const { t, lang } = useLang();
@@ -78,31 +71,80 @@ export function DonationView() {
             eyebrow={{ bn: "অনুদান পাঠানোর মাধ্যম", en: "How to Give" }}
             title={{ bn: "যেভাবে অনুদান পাঠাবেন", en: "Ways to Send Your Donation" }}
             body={{
-              bn: "নিচের মাধ্যমগুলোতে অনুদান পাঠানো যাবে। হিসাব নম্বরসমূহ শীঘ্রই সংযোজন করা হবে ইনশাআল্লাহ।",
-              en: "Donations may be sent through the channels below. The account details will be added shortly, inshaAllah.",
+              bn: "বিকাশ, নগদ অথবা সরাসরি ব্যাংক হিসাবে আপনার অনুদান পাঠাতে পারেন।",
+              en: "You may send your donation through bKash, Nagad, or directly to our bank account.",
             }}
           />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {channels.map((c, i) => (
-              <div
-                key={i}
-                className="rounded-2xl border border-navy-800/10 bg-white p-6 text-center shadow-soft"
-              >
-                <span className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-sky-100 text-teal-600">
-                  <Icon name={c.icon} className="h-6 w-6" />
-                </span>
-                <h3 className="font-bold text-navy-900">{t(c.name)}</h3>
-                <p className="mt-2 text-sm">
-                  {c.value ? (
-                    <span className="font-semibold text-teal-600">{c.value}</span>
-                  ) : (
-                    <span className="italic text-navy-800/35">
-                      {lang === "bn" ? "শীঘ্রই সংযোজন হবে" : "To be added"}
-                    </span>
-                  )}
-                </p>
+          <div className="mt-14 grid gap-6 lg:grid-cols-5">
+            {/* Mobile banking */}
+            <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-1">
+              {donationChannels.mobile.map((c) => (
+                <div
+                  key={t(c.name)}
+                  className="rounded-2xl border border-navy-800/10 bg-white p-6 text-center shadow-soft"
+                >
+                  <span className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-sky-100 text-teal-600">
+                    <Icon name="phone" className="h-6 w-6" />
+                  </span>
+                  <h3 className="font-bold text-navy-900">{t(c.name)}</h3>
+                  <span className="rule-gold mx-auto my-3 block h-px w-16" />
+                  <a
+                    href={`tel:+880${c.number.slice(1)}`}
+                    className="text-lg font-bold tracking-wide text-teal-600 hover:text-gold-600"
+                  >
+                    {lang === "bn" ? c.display : c.displayEn}
+                  </a>
+                  <p className="mt-2 text-xs text-navy-800/45">
+                    {lang === "bn" ? "পার্সোনাল নম্বর" : "Personal number"}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Bank account */}
+            <div className="relative overflow-hidden rounded-2xl border border-navy-800/10 bg-white p-8 shadow-soft lg:col-span-3">
+              <div className="pattern-girih-dark pointer-events-none absolute -end-8 -top-8 h-36 w-36 opacity-[0.06]" />
+              <div className="relative">
+                <div className="mb-5 flex items-center gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-navy-800 to-teal-600 text-white">
+                    <Icon name="scroll" className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-bold leading-snug text-navy-900">
+                      {t(donationChannels.bank.name)}
+                    </h3>
+                    <p className="text-sm text-teal-600">{t(donationChannels.bank.branch)}</p>
+                  </div>
+                </div>
+                <span className="rule-gold my-4 block h-px w-full" />
+                <dl className="space-y-4">
+                  <div>
+                    <dt className="caps text-xs text-navy-800/50">
+                      {lang === "bn" ? "হিসাবের নাম" : "Account Name"}
+                    </dt>
+                    <dd className="mt-1 font-bold text-navy-900">
+                      {donationChannels.bank.accountName}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="caps text-xs text-navy-800/50">
+                      {lang === "bn" ? "হিসাবের ধরন" : "Account Type"}
+                    </dt>
+                    <dd className="mt-1 font-medium text-navy-800/80">
+                      {t(donationChannels.bank.accountType)}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="caps text-xs text-navy-800/50">
+                      {lang === "bn" ? "হিসাব নম্বর" : "Account Number"}
+                    </dt>
+                    <dd className="mt-1 select-all font-mono text-2xl font-bold tracking-wider text-teal-600">
+                      {donationChannels.bank.accountNumber}
+                    </dd>
+                  </div>
+                </dl>
               </div>
-            ))}
+            </div>
           </div>
 
           <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-gold-400/50 bg-gold-200/25 p-6 text-center">

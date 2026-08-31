@@ -45,8 +45,25 @@ export const site = {
   /** Student results, published on the madrasah's QMM Soft portal. */
   resultUrl: "https://qmmsoft.com/1177/student_result",
 
-  facebook: "",
+  facebook: "https://www.facebook.com/share/1BqehgjH1v/",
+  /** WhatsApp uses the same number as the madrasah line. */
+  whatsapp: "8801722139364",
   youtube: "",
+};
+
+/** Mobile-banking and bank details for donations. */
+export const donationChannels = {
+  mobile: [
+    { name: { bn: "বিকাশ", en: "bKash" } satisfies T, number: "01722139364", display: "০১৭২২-১৩৯৩৬৪", displayEn: "01722-139364" },
+    { name: { bn: "নগদ", en: "Nagad" } satisfies T, number: "01722139364", display: "০১৭২২-১৩৯৩৬৪", displayEn: "01722-139364" },
+  ],
+  bank: {
+    name: { bn: "আল-আরাফাহ্ ইসলামী ব্যাংক লিমিটেড", en: "Al-Arafah Islami Bank Limited" } satisfies T,
+    accountName: "JAMIA UMMUL QURA AL ISLAMIA",
+    accountType: { bn: "মুদারাবা সেভিংস অ্যাকাউন্ট", en: "Mudaraba Savings Account" } satisfies T,
+    accountNumber: "0641120156615",
+    branch: { bn: "ব্রাহ্মণবাড়িয়া শাখা", en: "Brahmanbaria Branch" } satisfies T,
+  },
 };
 
 /** Navigation. Groups render as dropdowns on desktop, accordions on mobile. */

@@ -7,7 +7,7 @@ import { PageHero } from "../PageHero";
 import { Container, SectionHeading } from "../Section";
 
 export function TeachersView() {
-  const { lang, n } = useLang();
+  const { n } = useLang();
   const [principal, ...rest] = teachers;
 
   return (
@@ -48,12 +48,6 @@ export function TeachersView() {
               <TeacherCard key={teacher.slug} teacher={teacher} />
             ))}
           </div>
-
-          <p className="mt-12 text-center text-sm text-navy-800/50">
-            {lang === "bn"
-              ? "কিছু শিক্ষকের ছবি এখনো সংযোজন করা হয়নি; শীঘ্রই হালনাগাদ করা হবে ইনশাআল্লাহ।"
-              : "Portraits for a few teachers are yet to be added and will be updated soon, inshaAllah."}
-          </p>
         </Container>
       </section>
     </>

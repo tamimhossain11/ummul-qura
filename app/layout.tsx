@@ -3,6 +3,7 @@ import { Amiri, Cormorant_Garamond, Hind_Siliguri } from "next/font/google";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { SocialRail } from "@/components/SocialRail";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -77,6 +78,7 @@ export default function RootLayout({
           <main id="main" className="flex-1">
             {children}
           </main>
+          <SocialRail />
           <Footer />
         </LanguageProvider>
       </body>

@@ -58,7 +58,7 @@ export const teachers: Teacher[] = [
     slug: "arman-hossain",
     name: { bn: "মাওলানা আরমান হোসাইন (হাফি.)", en: "Maulana Arman Hossain (Hafi.)" },
     role: { bn: "সম্মানিত শিক্ষক", en: "Teacher" },
-    photo: null,
+    photo: "/teachers/arman.jpg",
   },
   {
     slug: "yusuf-arshi",

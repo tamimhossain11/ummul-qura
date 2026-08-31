@@ -7,6 +7,7 @@ import { departments } from "@/lib/content";
 import { Icon } from "./Icon";
 import { useLang } from "./LanguageProvider";
 import { Ornament } from "./Ornament";
+import { SocialLinks } from "./SocialRail";
 
 /** Renders a contact value, or a discreet placeholder while it is unconfirmed. */
 function ContactRow({
@@ -81,6 +82,7 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-5 text-sm leading-relaxed text-white/60">{t(site.tagline)}</p>
+          <SocialLinks className="mt-6" />
         </div>
 
         <div className="lg:col-span-2">

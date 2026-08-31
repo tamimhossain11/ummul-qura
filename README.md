@@ -31,25 +31,18 @@ can never drift apart from one another.
 
 ## Information still to be filled in
 
-Most contact details are now in place. What remains blank is listed below —
-each has a designed placeholder, and appears as soon as a value is supplied.
+Only these remain blank. Each has a designed placeholder and appears as soon
+as a value is supplied.
 
 **`lib/site.ts`**
-- `facebook`, `youtube` — social links
+- `youtube` — the YouTube channel URL. The social rail and footer already
+  render a YouTube button the moment this is set.
 
 **`lib/content.ts`**
 - `notices` — currently an empty array, so `/notices` shows an empty state.
   Add entries shaped `{ slug, title, date, category, body, pinned? }` and the
   list renders itself.
 - Admission fees and seat counts show as `—` in the table on `/admission`.
-
-**`components/views/DonationView.tsx`**
-- `channels` — bKash / Nagad / Rocket / bank account numbers
-
-**Photograph**
-- Maulana Arman Hossain has no portrait yet. Drop one at
-  `public/teachers/arman.jpg` and set `photo` on the `arman-hossain` entry in
-  `lib/content.ts`. Until then the card shows a patterned initial.
 
 **Forms**
 - The admission enquiry and contact forms are presentational. Wire them to an
@@ -65,6 +58,20 @@ each has a designed placeholder, and appears as soon as a value is supplied.
   madrasah's shared Google Maps link, which the "directions" button opens.
 - **Results portal** — https://qmmsoft.com/1177/student_result, linked from
   `/results` and from the homepage results band.
+- **Facebook** — https://www.facebook.com/share/1BqehgjH1v/
+- **WhatsApp** — 01722139364, linked as `wa.me/8801722139364`
+
+## Donations
+
+Set in `donationChannels` in `lib/site.ts`, rendered on `/donation`:
+
+- **bKash** and **Nagad** — 01722-139364 (personal)
+- **Al-Arafah Islami Bank Limited**, Brahmanbaria Branch
+  Mudaraba Savings, `JAMIA UMMUL QURA AL ISLAMIA`, A/C 0641120156615
+
+The cheque-book photograph these were taken from is deliberately **not** in
+the repository or on the site: it carries the cheque serial range, which
+should not be published. The details above are enough to receive a deposit.
 
 ## Pages
 

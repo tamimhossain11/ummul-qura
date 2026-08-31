@@ -30,8 +30,8 @@ export function HomeView() {
           aria-hidden="true"
           className="pointer-events-none absolute -start-32 top-1/3 h-96 w-96 rounded-full bg-cyan-400/10 blur-3xl"
         />
-        <Container className="relative grid items-center gap-12 py-16 lg:grid-cols-2 lg:py-24">
-          <div className="animate-rise text-center lg:text-start">
+        <Container className="relative grid items-center gap-12 py-16 lg:grid-cols-12 lg:gap-10 lg:py-24">
+          <div className="animate-rise text-center lg:col-span-5 lg:text-start">
             <p className="mb-4 inline-flex items-center gap-2 rounded-full border border-gold-500/40 bg-gold-500/10 px-4 py-1.5 text-xs font-semibold tracking-widest text-gold-300">
               <span className="h-1.5 w-1.5 rotate-45 bg-gold-400" />
               {lang === "bn"
@@ -74,19 +74,19 @@ export function HomeView() {
             </div>
           </div>
 
-          {/* Campus artwork in a mihrab arch */}
-          <div className="animate-rise relative [animation-delay:150ms]">
-            <div className="mask-arch-tall relative aspect-4/5 overflow-hidden border-4 border-gold-500/50 bg-navy-800 shadow-2xl sm:aspect-square lg:aspect-4/5">
+          {/* Campus artwork, shown whole — the frame matches the file's ratio */}
+          <div className="animate-rise relative lg:col-span-7 [animation-delay:150ms]">
+            <div className="relative aspect-1226/700 overflow-hidden rounded-2xl border-4 border-gold-500/50 bg-navy-800 shadow-2xl">
               <Image
-                src="/cover.jpeg"
+                src="/banners/campus.jpeg"
                 alt={t({
                   bn: "জামিয়া উম্মুল কুরা আল-ইসলামিয়ার প্রাঙ্গণ ও মাসজিদুল মিসবাহ",
                   en: "The grounds of Jamia Ummul Qura Al Islamia and Masjidul Misbah",
                 })}
                 fill
                 priority
-                sizes="(min-width: 1024px) 520px, 90vw"
-                className="object-cover"
+                sizes="(min-width: 1024px) 680px, 92vw"
+                className="object-contain"
               />
             </div>
             <div className="absolute -bottom-5 start-1/2 -translate-x-1/2 rounded-full border border-gold-500/40 bg-navy-950/90 px-6 py-2.5 text-center backdrop-blur rtl:translate-x-1/2">
@@ -97,6 +97,48 @@ export function HomeView() {
           </div>
         </Container>
         <div className="rule-gold h-0.5 w-full" />
+      </section>
+
+      {/* ── Temporary campus ───────────────────────────────────────────── */}
+      <section className="border-b border-navy-800/10 bg-white py-16">
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-5">
+            <div className="lg:col-span-3">
+              <div className="relative aspect-2360/1350 overflow-hidden rounded-2xl border-4 border-white bg-navy-800 shadow-lift ring-1 ring-navy-800/10">
+                <Image
+                  src="/campus-signboard.png"
+                  alt={t({
+                    bn: "জামিয়ার বর্তমান অস্থায়ী ক্যাম্পাস",
+                    en: "The Jamia's present temporary campus",
+                  })}
+                  fill
+                  sizes="(min-width: 1024px) 640px, 92vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <div className="lg:col-span-2">
+              <SectionHeading
+                align="start"
+                eyebrow={{ bn: "বর্তমান ঠিকানা", en: "Where We Are Now" }}
+                title={{ bn: "অস্থায়ী ক্যাম্পাস", en: "Our Temporary Campus" }}
+                arabic="المقر المؤقت"
+              />
+              <p className="text-base leading-relaxed text-navy-800/75">
+                {lang === "bn"
+                  ? "ফুলবাড়িয়া বাস স্ট্যান্ড সংলগ্ন এই ভবনেই বর্তমানে জামিয়ার সকল শিক্ষা কার্যক্রম পরিচালিত হচ্ছে। এখানে রয়েছে শ্রেণিকক্ষ, দারুল ইক্বামা ও মাসজিদুল মিসবাহ। নিজস্ব ১০২ শতক জমিতে স্থায়ী ক্যাম্পাসের নির্মাণকাজ সম্পন্ন হলে জামিয়া সেখানে স্থানান্তরিত হবে ইনশাআল্লাহ।"
+                  : "All of the Jamia's teaching is presently carried on in this building beside Phulbaria Bus Stand, which houses the classrooms, the residential hall and Masjidul Misbah. Once the permanent campus is built on our own 102 decimals of land, the Jamia will move there, inshaAllah."}
+              </p>
+              <Link
+                href="/about#land"
+                className="mt-7 inline-flex items-center gap-2 rounded-full bg-navy-900 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-teal-600"
+              >
+                {lang === "bn" ? "স্থায়ী জায়গা দেখুন" : "See the permanent site"}
+                <Icon name="arrow" className="h-4 w-4 rtl:rotate-180" strokeWidth={2.2} />
+              </Link>
+            </div>
+          </div>
+        </Container>
       </section>
 
       {/* ── Stats ──────────────────────────────────────────────────────── */}
