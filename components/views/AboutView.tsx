@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { about, teachers } from "@/lib/content";
+import Link from "next/link";
+import { about, land, teachers } from "@/lib/content";
 import { site } from "@/lib/site";
 import { Icon } from "../Icon";
 import { useLang } from "../LanguageProvider";
@@ -31,7 +32,7 @@ export function AboutView() {
             <SectionHeading
               align="start"
               eyebrow={{ bn: "আমরা কারা", en: "Who We Are" }}
-              title={{ bn: "জামিয়া উম্মুল কুরা আল-ইসলামিয়া", en: "Jamia Ummol Qura Al Islamia" }}
+              title={{ bn: "জামিয়া উম্মুল কুরা আল-ইসলামিয়া", en: "Jamia Ummul Qura Al Islamia" }}
             />
             <div className="space-y-5 text-base leading-relaxed text-navy-800/75">
               <p>{t(about.intro)}</p>
@@ -117,6 +118,75 @@ export function AboutView() {
                 <p className="mt-2 text-sm leading-relaxed text-navy-800/70">{t(v.body)}</p>
               </div>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Permanent land */}
+      <section id="land" className="scroll-mt-32 py-20">
+        <Container>
+          <SectionHeading
+            eyebrow={{ bn: "স্থায়ী জায়গা", en: "Permanent Site" }}
+            title={land.title}
+            arabic="الأرض الدائمة"
+          />
+
+          <div className="mt-14 grid items-center gap-12 lg:grid-cols-2">
+            <div>
+              <div className="inline-flex items-baseline gap-3 rounded-2xl bg-gradient-to-br from-navy-900 to-teal-600 px-8 py-5 text-white shadow-lift">
+                <span className="text-5xl font-bold text-gold-400">{n(land.area)}</span>
+                <span className="text-lg font-semibold text-white/80">{t(land.areaUnit)}</span>
+              </div>
+              <p className="mt-7 text-base leading-relaxed text-navy-800/75">{t(land.body)}</p>
+
+              <ul className="mt-7 grid gap-3 sm:grid-cols-2">
+                {[
+                  { bn: "প্রশস্ত শ্রেণিকক্ষ", en: "Spacious classrooms" },
+                  { bn: "দারুল ইক্বামা", en: "Residential hall" },
+                  { bn: "কুতুবখানা", en: "Library" },
+                  { bn: "জামে মসজিদ", en: "Congregational mosque" },
+                ].map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-center gap-2.5 rounded-lg border border-navy-800/10 bg-white px-4 py-3 text-sm font-medium text-navy-800/80 shadow-soft"
+                  >
+                    <Icon name="check" className="h-4 w-4 shrink-0 text-gold-600" strokeWidth={2.4} />
+                    {t(item)}
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                href="/donation"
+                className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold-500 px-7 py-3 text-sm font-bold text-navy-950 transition-colors hover:bg-gold-400"
+              >
+                <Icon name="gift" className="h-4 w-4" strokeWidth={2} />
+                {lang === "bn" ? "নির্মাণকাজে শরিক হোন" : "Support the building work"}
+              </Link>
+            </div>
+
+            <div className="grid gap-5">
+              {land.images.map((img, i) => (
+                <figure
+                  key={i}
+                  className="relative overflow-hidden rounded-2xl border-4 border-white bg-navy-800 shadow-lift"
+                >
+                  <div className="relative aspect-video">
+                    <Image
+                      src={img.src}
+                      alt={t(img.caption)}
+                      fill
+                      sizes="(min-width: 1024px) 520px, 90vw"
+                      className="object-cover"
+                    />
+                    <span className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-transparent" />
+                  </div>
+                  <figcaption className="absolute inset-x-0 bottom-0 p-4 text-sm font-semibold text-white">
+                    {t(img.caption)}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
           </div>
         </Container>
       </section>

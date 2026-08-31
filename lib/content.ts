@@ -259,6 +259,24 @@ export type EventItem = {
 
 export const events: EventItem[] = [
   {
+    slug: "ramadan-special-courses",
+    title: { bn: "রমজান উপলক্ষে ২০ দিনব্যাপী বিশেষ দুটি কোর্স", en: "Two Special 20-Day Ramadan Courses" },
+    date: { bn: "পহেলা রমজান থেকে ২০শে রমজান", en: "1st to 20th Ramadan" },
+    time: { bn: "২০ দিনব্যাপী", en: "Over twenty days" },
+    venue: { bn: "ফুলবাড়িয়া বাসস্ট্যান্ড সংলগ্ন, ব্রাহ্মণবাড়িয়া", en: "Beside Phulbaria Bus Stand, Brahmanbaria" },
+    image: "/banners/new-addition.jpeg",
+    body: {
+      bn: "পবিত্র মাহে রমজান উপলক্ষে জামিয়ার উদ্যোগে ২০ দিনব্যাপী দুটি বিশেষ কোর্সের আয়োজন — হাতের লেখা শেখার কোর্স ও আরবি ভাষা শেখার কোর্স। আরবি ভাষা কোর্সে ভর্তির যোগ্যতা নাহবেমীর থেকে তদূর্ধ্ব। কোর্স ফি নতুনদের জন্য ১০০০ টাকা, পুরাতনদের জন্য ৮০০ টাকা। আবাসিক অংশগ্রহণকারীদের প্রয়োজনীয় বিছানাপত্র সঙ্গে আনতে হবে।",
+      en: "Two special twenty-day courses held by the Jamia through the blessed month of Ramadan — one in calligraphic handwriting, one in the Arabic language. Entry to the Arabic course is open from Nahwemir upwards. The fee is 1000 Taka for new students and 800 for continuing ones; residential participants should bring their own bedding.",
+    },
+    highlights: [
+      { bn: "আরবি লেখার ধরণ — খতে রুকা, খতে নাসখ, খতে দেওয়ানি", en: "Arabic scripts — Ruq'ah, Naskh and Diwani" },
+      { bn: "বাংলা লেখার ধরণ — বাংলা জাদীদ, বাংলা বাঁকা", en: "Bangla hands — Jadid and cursive" },
+      { bn: "আরবি ভাষা শেখার বিশেষ কোর্স", en: "A dedicated Arabic language course" },
+      { bn: "তত্ত্বাবধানে হাফেজ ক্বারী রেদওয়ানুল ইসলাম", en: "Supervised by Hafez Qari Redwanul Islam" },
+    ],
+  },
+  {
     slug: "hifzul-quran-competition",
     title: { bn: "জেলাব্যাপী হিফজুল কুরআন প্রতিযোগিতা", en: "District-wide Hifzul Qur'an Competition" },
     date: { bn: "১৫ জানুয়ারি", en: "15 January" },
@@ -351,7 +369,12 @@ export const notices: Notice[] = [];
 /* ── Gallery ──────────────────────────────────────────────────────────── */
 
 export const gallery: { src: string; caption: T }[] = [
+  { src: "/campus-signboard.png", caption: { bn: "জামিয়ার সম্মুখভাগ ও নামফলক", en: "The Jamia frontage and its signboard" } },
   { src: "/cover.jpeg", caption: { bn: "জামিয়ার সম্মুখ চিত্র ও মসজিদুল মিসবাহ", en: "The Jamia frontage and Masjidul Misbah" } },
+  { src: "/land/land-1.jpeg", caption: { bn: "জামিয়ার ১০২ শতক স্থায়ী জায়গা", en: "The Jamia's 102 decimals of permanent land" } },
+  { src: "/land/land-2.jpeg", caption: { bn: "স্থায়ী জায়গা পরিদর্শনে উস্তাদমণ্ডলী", en: "Teachers visiting the permanent site" } },
+  { src: "/banners/new-addition.jpeg", caption: { bn: "রমজান উপলক্ষে বিশেষ দুটি কোর্স", en: "Two special Ramadan courses" } },
+  { src: "/results/result-3.jpeg", caption: { bn: "৪৮তম বেফাক পরীক্ষার ঐতিহাসিক সাফল্য", en: "A historic result in the 48th Befaq examination" } },
   { src: "/banners/hifz-competition.jpeg", caption: { bn: "জেলাব্যাপী হিফজুল কুরআন প্রতিযোগিতা", en: "District-wide Hifzul Qur'an Competition" } },
   { src: "/banners/arabic-language-day.jpeg", caption: { bn: "আন্তর্জাতিক আরবি ভাষা দিবস", en: "World Arabic Language Day" } },
   { src: "/banners/protiva-bikash.jpeg", caption: { bn: "ছাত্র প্রতিভা বিকাশের মঞ্চ", en: "Student Talent Development Platform" } },
@@ -365,7 +388,7 @@ export const gallery: { src: string; caption: T }[] = [
 export const about = {
   intro: {
     bn: "জামিয়া উম্মুল কুরা আল-ইসলামিয়া ২০২২ ঈসায়ী সনে ব্রাহ্মণবাড়িয়া সদরের ফুলবাড়িয়ায় প্রতিষ্ঠিত একটি স্বতন্ত্র দ্বীনি শিক্ষাপ্রতিষ্ঠান। মক্কা মুকাররমার পবিত্র নাম 'উম্মুল কুরা'-এর নিসবতে প্রতিষ্ঠিত এই জামিয়ার লক্ষ্য — কুরআন ও সুন্নাহর নির্ভুল ইলম, সালাফে সালেহীনের আদর্শ এবং যুগোপযোগী যোগ্যতায় সমৃদ্ধ একটি প্রজন্ম গড়ে তোলা।",
-    en: "Jamia Ummol Qura Al Islamia is an independent institution of Islamic learning founded in 2022 at Phulbaria, Brahmanbaria Sadar. Named in relation to Umm al-Qura, the blessed name of Makkah, the Jamia exists to raise a generation grounded in the sound knowledge of Qur'an and Sunnah, shaped by the way of the pious predecessors, and equipped for its own age.",
+    en: "Jamia Ummul Qura Al Islamia is an independent institution of Islamic learning founded in 2022 at Phulbaria, Brahmanbaria Sadar. Named in relation to Umm al-Qura, the blessed name of Makkah, the Jamia exists to raise a generation grounded in the sound knowledge of Qur'an and Sunnah, shaped by the way of the pious predecessors, and equipped for its own age.",
   } satisfies T,
   history: {
     bn: "প্রতিষ্ঠার সূচনালগ্ন থেকেই জামিয়া ছাত্রদের জন্য একটি নিরাপদ, সুশৃঙ্খল ও ইলমী পরিবেশ নিশ্চিত করে আসছে। নিজস্ব প্রাঙ্গণে রয়েছে শ্রেণিকক্ষ, দারুল ইক্বামা এবং 'মাসজিদুল মিসবাহ'। অল্প সময়ের ব্যবধানে মক্তব থেকে শুরু করে হিফজ ও কিতাব বিভাগ পর্যন্ত ধারাবাহিক শিক্ষাক্রম চালু হয়েছে এবং জেলাব্যাপী হিফজুল কুরআন প্রতিযোগিতা, আন্তর্জাতিক আরবি ভাষা দিবসসহ নানা আয়োজনে জামিয়া ব্রাহ্মণবাড়িয়ার দ্বীনি অঙ্গনে স্বতন্ত্র পরিচিতি লাভ করেছে।",
@@ -399,7 +422,7 @@ export const about = {
   ],
   message: {
     bn: "বিসমিল্লাহির রাহমানির রাহীম। সমস্ত প্রশংসা আল্লাহ তাআলার, দরুদ ও সালাম নাযিল হোক প্রিয় নবী মুহাম্মাদ ﷺ-এর প্রতি।\n\nপ্রিয় অভিভাবক ও শুভানুধ্যায়ীবৃন্দ, জামিয়া উম্মুল কুরা আল-ইসলামিয়া কেবল একটি শিক্ষাপ্রতিষ্ঠান নয় — এটি একটি আমানত। আপনারা আমাদের হাতে যে সন্তানদের তুলে দেন, তাদেরকে কুরআনের হাফেজ, হাদীসের ধারক এবং উত্তম চরিত্রের অধিকারী মানুষ হিসেবে গড়ে তোলাই আমাদের একমাত্র লক্ষ্য।\n\nআমরা বিশ্বাস করি, ইলম ও আদব একে অপরের পরিপূরক। তাই পাঠদানের পাশাপাশি প্রতিটি ছাত্রের চরিত্র, স্বাস্থ্য ও মানসিক বিকাশের প্রতি আমরা সমান যত্নশীল। আল্লাহ তাআলা আমাদের এই খিদমতকে কবুল করুন এবং এই জামিয়াকে উম্মাহর জন্য কল্যাণের ঝর্ণাধারা বানিয়ে দিন। আমীন।",
-    en: "In the name of Allah, the Most Merciful. All praise belongs to Allah, and peace and blessings upon the beloved Prophet Muhammad ﷺ.\n\nRespected guardians and well-wishers, Jamia Ummol Qura Al Islamia is not merely a school — it is a trust. The children you place in our hands we aim to return to you as memorisers of the Qur'an, bearers of the Sunnah, and people of excellent character. That is our single purpose.\n\nWe hold that knowledge and manners complete one another. So alongside instruction we give equal care to each student's character, health and inner growth. May Allah accept this service from us and make this Jamia a spring of good for the Ummah. Ameen.",
+    en: "In the name of Allah, the Most Merciful. All praise belongs to Allah, and peace and blessings upon the beloved Prophet Muhammad ﷺ.\n\nRespected guardians and well-wishers, Jamia Ummul Qura Al Islamia is not merely a school — it is a trust. The children you place in our hands we aim to return to you as memorisers of the Qur'an, bearers of the Sunnah, and people of excellent character. That is our single purpose.\n\nWe hold that knowledge and manners complete one another. So alongside instruction we give equal care to each student's character, health and inner growth. May Allah accept this service from us and make this Jamia a spring of good for the Ummah. Ameen.",
   } satisfies T,
 };
 
@@ -498,3 +521,185 @@ export const donationCauses: { title: T; body: T }[] = [
     body: { bn: "কুরবানির পশুর চামড়া দান করে ছাত্রদের খিদমতে শরিক হোন।", en: "Donate Qurbani hides and take part in the service of our students." },
   },
 ];
+
+/* ── Board examination results ────────────────────────────────────────── */
+/* Figures transcribed from the madrasah's own published result sheets in
+   public/results. */
+
+export const resultSummary: { value: string; label: T; note?: T }[] = [
+  {
+    value: "21",
+    label: { bn: "মোট মেধা স্থান", en: "Total Merit Positions" },
+    note: { bn: "৪৮তম বেফাক ও এদারা মিলে", en: "Across the 48th Befaq and Edara boards" },
+  },
+  {
+    value: "28",
+    label: { bn: "মুমতাজ — বেফাক", en: "Mumtaz — Befaq" },
+    note: { bn: "৮১ জন পরীক্ষার্থীর মধ্যে", en: "Out of 81 candidates" },
+  },
+  {
+    value: "5",
+    label: { bn: "মুমতাজ — এদারা", en: "Mumtaz — Edara" },
+    note: { bn: "৭ জন পরীক্ষার্থীর মধ্যে", en: "Out of 7 candidates" },
+  },
+  {
+    value: "3",
+    label: { bn: "বর্ষেই এই সাফল্য", en: "Years to This Result" },
+    note: { bn: "প্রতিষ্ঠার তৃতীয় বর্ষে", en: "In only our third year" },
+  },
+];
+
+export type ResultBoard = {
+  slug: string;
+  title: T;
+  exam: T;
+  image: string;
+  groups: { name: T; rows: { name: T; position: T }[] }[];
+};
+
+export const resultBoards: ResultBoard[] = [
+  {
+    slug: "befaq-48",
+    title: { bn: "৪৮তম বেফাকুল মাদারিসিল আরাবিয়া", en: "48th Befaqul Madarisil Arabia" },
+    exam: { bn: "কেন্দ্রীয় পরীক্ষার ফলাফল — তৃতীয় বর্ষে ঐতিহাসিক সাফল্য", en: "Central examination results — a historic result in our third year" },
+    image: "/results/result-3.jpeg",
+    groups: [
+      {
+        name: { bn: "নাহবেমীর", en: "Nahwemir" },
+        rows: [
+          { name: { bn: "সারওয়ার", en: "Sarwar" }, position: { bn: "১০ম", en: "10th" } },
+          { name: { bn: "সফওয়ান আহমদ ইফাজ", en: "Safwan Ahmad Ifaj" }, position: { bn: "১৩তম", en: "13th" } },
+          { name: { bn: "ফাহিম আহমেদ", en: "Fahim Ahmed" }, position: { bn: "১৪তম", en: "14th" } },
+          { name: { bn: "মুস্তাকিম", en: "Mustakim" }, position: { bn: "১৯তম", en: "19th" } },
+          { name: { bn: "মাহমুদুল হক", en: "Mahmudul Haque" }, position: { bn: "১৯তম", en: "19th" } },
+          { name: { bn: "মাহমুদুল হাসান", en: "Mahmudul Hasan" }, position: { bn: "২৩তম", en: "23rd" } },
+          { name: { bn: "শেখ আরাফাত", en: "Sheikh Arafat" }, position: { bn: "২৪তম", en: "24th" } },
+          { name: { bn: "সালমান", en: "Salman" }, position: { bn: "২৬তম", en: "26th" } },
+          { name: { bn: "আরাফাত", en: "Arafat" }, position: { bn: "২৯তম", en: "29th" } },
+          { name: { bn: "নরুজ্জামান রণি", en: "Noruzzaman Roni" }, position: { bn: "৩১তম", en: "31st" } },
+          { name: { bn: "শামীম আহমেদ", en: "Shamim Ahmed" }, position: { bn: "৩৩তম", en: "33rd" } },
+          { name: { bn: "হাসান জামিল", en: "Hasan Jamil" }, position: { bn: "৩৫তম", en: "35th" } },
+          { name: { bn: "সাদ হোসাইন", en: "Saad Hossain" }, position: { bn: "৩৭তম", en: "37th" } },
+          { name: { bn: "খায়রুল ইসলাম", en: "Khairul Islam" }, position: { bn: "৩৯তম", en: "39th" } },
+          { name: { bn: "গিয়াস উদ্দিন", en: "Giyas Uddin" }, position: { bn: "৪২তম", en: "42nd" } },
+          { name: { bn: "আফজাল হোসাইন", en: "Afzal Hossain" }, position: { bn: "৪৩তম", en: "43rd" } },
+          { name: { bn: "আবু বকর", en: "Abu Bakar" }, position: { bn: "৪৯তম", en: "49th" } },
+          { name: { bn: "রজব আলী", en: "Rajab Ali" }, position: { bn: "৫১তম", en: "51st" } },
+        ],
+      },
+      {
+        name: { bn: "হুফফাজ", en: "Huffaz" },
+        rows: [{ name: { bn: "সিয়াম", en: "Siyam" }, position: { bn: "৫৭তম", en: "57th" } }],
+      },
+    ],
+  },
+  {
+    slug: "edara-85",
+    title: { bn: "৮৫তম এদারায়ে তালিমিয়্যাহ, ব্রাহ্মণবাড়িয়া বোর্ড", en: "85th Edara-e-Talimiyyah, Brahmanbaria Board" },
+    exam: { bn: "বোর্ড পরীক্ষার ফলাফল", en: "Board examination results" },
+    image: "/results/result-3.jpeg",
+    groups: [
+      {
+        name: { bn: "শরহে জামী", en: "Sharhe Jami" },
+        rows: [
+          { name: { bn: "ইরফান আহমেদ", en: "Irfan Ahmed" }, position: { bn: "০৪তম", en: "4th" } },
+          { name: { bn: "জাহিদুল ইসলাম", en: "Jahidul Islam" }, position: { bn: "১৩তম", en: "13th" } },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "befaq-edara-combined",
+    title: { bn: "বেফাক ও এদারা বোর্ডের সম্মিলিত ফলাফল", en: "Combined Befaq & Edara Board Results" },
+    exam: { bn: "মেধাতালিকায় স্থান অর্জনকারী ছাত্রবৃন্দ", en: "Students placed on the merit lists" },
+    image: "/results/result-4.jpeg",
+    groups: [
+      {
+        name: { bn: "হুফফাজ — বেফাক", en: "Huffaz — Befaq" },
+        rows: [
+          { name: { bn: "মো: মুস্তফা রহমান", en: "Md. Mustafa Rahman" }, position: { bn: "১৮", en: "18" } },
+          { name: { bn: "মো: রিয়াজুল ইসলাম", en: "Md. Riyazul Islam" }, position: { bn: "৩২", en: "32" } },
+          { name: { bn: "মো: শফিকুল ইসলাম", en: "Md. Shafiqul Islam" }, position: { bn: "৩৯", en: "39" } },
+          { name: { bn: "মো: ওমর ফারুক", en: "Md. Omar Faruk" }, position: { bn: "৭১", en: "71" } },
+          { name: { bn: "মো: জোবায়েল ইসলাম সামী", en: "Md. Jobayel Islam Sami" }, position: { bn: "৭১", en: "71" } },
+          { name: { bn: "মো: কেফাইতুল্লাহ", en: "Md. Kefayetullah" }, position: { bn: "৭৩", en: "73" } },
+        ],
+      },
+      {
+        name: { bn: "নাহবেমীর — বেফাক", en: "Nahwemir — Befaq" },
+        rows: [
+          { name: { bn: "মো: রায়হান উদ্দীন", en: "Md. Raihan Uddin" }, position: { bn: "২৫", en: "25" } },
+          { name: { bn: "মো: জামিল আহমদ মুস্তফা", en: "Md. Jamil Ahmad Mustafa" }, position: { bn: "২৮", en: "28" } },
+          { name: { bn: "মো: জিহাদ বিন সাইদ", en: "Md. Jihad bin Sayeed" }, position: { bn: "৩০", en: "30" } },
+          { name: { bn: "মো: আরাফাত হোসেন রায়হান", en: "Md. Arafat Hossain Raihan" }, position: { bn: "৩১", en: "31" } },
+          { name: { bn: "মো: ছিয়াম ইসলাম", en: "Md. Siyam Islam" }, position: { bn: "৩৮", en: "38" } },
+          { name: { bn: "মো: মনির হোসেন", en: "Md. Monir Hossain" }, position: { bn: "৩৮", en: "38" } },
+          { name: { bn: "মো: আফনান হাবিব", en: "Md. Afnan Habib" }, position: { bn: "৫০", en: "50" } },
+          { name: { bn: "মো: আহমদুল্লাহ আজমান", en: "Md. Ahmadullah Azman" }, position: { bn: "৫০", en: "50" } },
+          { name: { bn: "মো: জাকারিয়া হোসেন", en: "Md. Zakaria Hossain" }, position: { bn: "৫০", en: "50" } },
+        ],
+      },
+      {
+        name: { bn: "হেদায়াতুন্নাহু — এদারা", en: "Hidayatun Nahw — Edara" },
+        rows: [
+          { name: { bn: "মো: সালমান হুসাইন", en: "Md. Salman Hossain" }, position: { bn: "৫", en: "5" } },
+          { name: { bn: "মো: সারোয়ার হুসাইন", en: "Md. Sarwar Hossain" }, position: { bn: "৬", en: "6" } },
+          { name: { bn: "মো: মাহমুদুল হাসান", en: "Md. Mahmudul Hasan" }, position: { bn: "৭", en: "7" } },
+          { name: { bn: "মো: জাকারিয়া", en: "Md. Zakaria" }, position: { bn: "১৩", en: "13" } },
+          { name: { bn: "মো: ফাহিম আহমদ", en: "Md. Fahim Ahmad" }, position: { bn: "২০", en: "20" } },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "edara-2024",
+    title: { bn: "এদারায়ে তালিমিয়্যাহ ব্রাহ্মণবাড়িয়া বোর্ড পরীক্ষা ২০২৪", en: "Edara-e-Talimiyyah Brahmanbaria Board, 2024" },
+    exam: { bn: "মোট পরীক্ষার্থী ২০ জন, মোট সিরিয়াল ০৬টি", en: "20 candidates, 6 merit positions" },
+    image: "/results/result-2.jpeg",
+    groups: [
+      {
+        name: { bn: "শরহে জামী", en: "Sharhe Jami" },
+        rows: [
+          { name: { bn: "মোঃ আশরাফুজ্জামান", en: "Md. Ashrafuzzaman" }, position: { bn: "৫ম", en: "5th" } },
+          { name: { bn: "মোঃ ফখরুল ইসলাম", en: "Md. Fakhrul Islam" }, position: { bn: "১১তম", en: "11th" } },
+        ],
+      },
+      {
+        name: { bn: "হেদায়াতুন্নাহু", en: "Hidayatun Nahw" },
+        rows: [{ name: { bn: "মোঃ ইরফান আহমদ", en: "Md. Irfan Ahmad" }, position: { bn: "১ম", en: "1st" } }],
+      },
+      {
+        name: { bn: "মিযান", en: "Mizan" },
+        rows: [
+          { name: { bn: "মোঃ সালমান", en: "Md. Salman" }, position: { bn: "২য়", en: "2nd" } },
+          { name: { bn: "মোঃ আরাফাত (১ম)", en: "Md. Arafat (I)" }, position: { bn: "১৩তম", en: "13th" } },
+          { name: { bn: "মোঃ আরাফাত (২য়)", en: "Md. Arafat (II)" }, position: { bn: "১৪তম", en: "14th" } },
+        ],
+      },
+    ],
+  },
+];
+
+/** Every published result sheet, shown as a gallery on the results page. */
+export const resultSheets: { src: string; caption: T }[] = [
+  { src: "/results/result-3.jpeg", caption: { bn: "৪৮তম বেফাক ও ৮৫তম এদারা বোর্ডের ফলাফল", en: "48th Befaq and 85th Edara board results" } },
+  { src: "/results/result-4.jpeg", caption: { bn: "বেফাক ও এদারা বোর্ডের মেধাতালিকা", en: "Befaq and Edara board merit lists" } },
+  { src: "/results/result-1.jpeg", caption: { bn: "ব্রাহ্মণবাড়িয়া আঞ্চলিক বোর্ড (এদারা) এর ফলাফল", en: "Brahmanbaria regional board (Edara) results" } },
+  { src: "/results/result-2.jpeg", caption: { bn: "এদারায়ে তালিমিয়্যাহ বোর্ড পরীক্ষা ২০২৪ ইং", en: "Edara-e-Talimiyyah board examination, 2024" } },
+];
+
+/* ── The permanent campus land ────────────────────────────────────────── */
+
+export const land = {
+  area: "102",
+  areaUnit: { bn: "শতক", en: "decimals" } satisfies T,
+  title: { bn: "নিজস্ব স্থায়ী জায়গা", en: "Our Permanent Land" } satisfies T,
+  body: {
+    bn: "আল্লাহ তাআলার অশেষ মেহেরবানীতে জামিয়ার জন্য ১০২ শতক নিজস্ব স্থায়ী জায়গা নির্ধারিত হয়েছে। এই জমিতেই পর্যায়ক্রমে গড়ে উঠবে জামিয়ার স্থায়ী ক্যাম্পাস — প্রশস্ত শ্রেণিকক্ষ, দারুল ইক্বামা, কুতুবখানা ও জামে মসজিদ। ভবিষ্যৎ প্রজন্মের জন্য এই নির্মাণকাজে শরিক হওয়া একটি সদকায়ে জারিয়া।",
+    en: "By the abundant grace of Allah, 102 decimals of land have been secured as the Jamia's own permanent site. On this ground the permanent campus will rise in stages — spacious classrooms, a residential hall, a library and a congregational mosque. To take part in this building is a lasting charity for the generations to come.",
+  } satisfies T,
+  images: [
+    { src: "/land/land-1.jpeg", caption: { bn: "জামিয়ার জন্য নির্ধারিত স্থায়ী জমি", en: "The land secured for the Jamia" } satisfies T },
+    { src: "/land/land-2.jpeg", caption: { bn: "উস্তাদমণ্ডলীর জমি পরিদর্শন", en: "The teachers visiting the site" } satisfies T },
+  ],
+};

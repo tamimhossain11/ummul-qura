@@ -157,12 +157,23 @@ export function AdmissionView() {
                 <Icon name="pin" className="mt-0.5 h-4 w-4 shrink-0 text-gold-600" strokeWidth={1.8} />
                 {t(site.address)}
               </p>
-              <p className="flex items-start gap-3 text-sm text-navy-800/80">
+              <a
+                href={`tel:+880${site.phone.number.slice(1)}`}
+                className="flex items-start gap-3 text-sm text-navy-800/80 hover:text-teal-600"
+              >
                 <Icon name="phone" className="mt-0.5 h-4 w-4 shrink-0 text-gold-600" strokeWidth={1.8} />
-                <span className="italic text-navy-800/40">
-                  {lang === "bn" ? "শীঘ্রই সংযোজন করা হবে" : "To be added shortly"}
+                <span>
+                  {lang === "bn" ? site.phone.display : site.phone.displayEn}
+                  <span className="ms-2 text-navy-800/45">({t(site.phone.label)})</span>
                 </span>
-              </p>
+              </a>
+              <a
+                href={`mailto:${site.emails[0].address}`}
+                className="flex items-start gap-3 text-sm text-navy-800/80 hover:text-teal-600"
+              >
+                <Icon name="mail" className="mt-0.5 h-4 w-4 shrink-0 text-gold-600" strokeWidth={1.8} />
+                {site.emails[0].address}
+              </a>
             </div>
             <Link
               href="/contact"

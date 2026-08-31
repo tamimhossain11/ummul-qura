@@ -90,13 +90,21 @@ export function DepartmentsView() {
               ? "ভর্তির নিয়মাবলী, প্রয়োজনীয় কাগজপত্র ও প্রক্রিয়া সম্পর্কে বিস্তারিত জানুন।"
               : "Read the full admission rules, required documents and process."}
           </p>
-          <Link
-            href="/admission"
-            className="mt-7 inline-flex items-center gap-2 rounded-full bg-gold-500 px-7 py-3 text-sm font-bold text-navy-950 transition-colors hover:bg-gold-400"
-          >
-            {lang === "bn" ? "ভর্তি তথ্য দেখুন" : "See admission details"}
-            <Icon name="arrow" className="h-4 w-4 rtl:rotate-180" strokeWidth={2.2} />
-          </Link>
+          <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/admission"
+              className="inline-flex items-center gap-2 rounded-full bg-gold-500 px-7 py-3 text-sm font-bold text-navy-950 transition-colors hover:bg-gold-400"
+            >
+              {lang === "bn" ? "ভর্তি তথ্য দেখুন" : "See admission details"}
+              <Icon name="arrow" className="h-4 w-4 rtl:rotate-180" strokeWidth={2.2} />
+            </Link>
+            <Link
+              href="/results"
+              className="inline-flex items-center gap-2 rounded-full border border-white/40 px-7 py-3 text-sm font-bold text-white transition-colors hover:border-gold-400 hover:text-gold-300"
+            >
+              {lang === "bn" ? "পরীক্ষার ফলাফল" : "Examination results"}
+            </Link>
+          </div>
         </Container>
       </section>
     </>

@@ -125,19 +125,23 @@ export function Footer() {
               icon="pin"
               label={lang === "bn" ? "ঠিকানা" : "Address"}
               value={t(site.address)}
+              href={site.mapLink}
             />
             <ContactRow
               icon="phone"
-              label={lang === "bn" ? "মোবাইল" : "Phone"}
-              value={site.phone}
-              href={site.phone ? `tel:${site.phone}` : undefined}
+              label={t(site.phone.label)}
+              value={lang === "bn" ? site.phone.display : site.phone.displayEn}
+              href={`tel:+880${site.phone.number.slice(1)}`}
             />
-            <ContactRow
-              icon="mail"
-              label={lang === "bn" ? "ই-মেইল" : "Email"}
-              value={site.email}
-              href={site.email ? `mailto:${site.email}` : undefined}
-            />
+            {site.emails.map((mail) => (
+              <ContactRow
+                key={mail.address}
+                icon="mail"
+                label={t(mail.label)}
+                value={mail.address}
+                href={`mailto:${mail.address}`}
+              />
+            ))}
           </ul>
         </div>
       </div>

@@ -28,7 +28,7 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jamiaummolqura.edu.bd"),
+  metadataBase: new URL("https://jamiaummulqura.com"),
   title: {
     default: `${site.nameBn} | ${site.nameEn}`,
     template: `%s | ${site.nameBn}`,
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     "মাদরাসা",
     "ব্রাহ্মণবাড়িয়া",
     "হিফজুল কুরআন",
-    "Jamia Ummol Qura",
+    "Jamia Ummul Qura",
     "madrasah",
     "Brahmanbaria",
   ],

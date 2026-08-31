@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { about, departments, events, features, gallery, teachers } from "@/lib/content";
+import { about, departments, events, features, gallery, land, resultSummary, teachers } from "@/lib/content";
 import { site } from "@/lib/site";
 import { DepartmentCard, EventCard, FeatureCard, TeacherCard } from "../Cards";
 import { Icon } from "../Icon";
@@ -81,7 +81,7 @@ export function HomeView() {
                 src="/cover.jpeg"
                 alt={t({
                   bn: "জামিয়া উম্মুল কুরা আল-ইসলামিয়ার প্রাঙ্গণ ও মাসজিদুল মিসবাহ",
-                  en: "The grounds of Jamia Ummol Qura Al Islamia and Masjidul Misbah",
+                  en: "The grounds of Jamia Ummul Qura Al Islamia and Masjidul Misbah",
                 })}
                 fill
                 priority
@@ -199,6 +199,89 @@ export function HomeView() {
             {departments.map((d) => (
               <DepartmentCard key={d.slug} department={d} />
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* ── Results ────────────────────────────────────────────────────── */}
+      <section className="py-20">
+        <Container>
+          <SectionHeading
+            eyebrow={{ bn: "আমাদের সাফল্য", en: "Our Results" }}
+            title={{ bn: "বেফাক ও এদারা পরীক্ষার সফলতা", en: "Success in the Befaq & Edara Examinations" }}
+            arabic="نتائج الامتحانات"
+            body={{
+              bn: "প্রতিষ্ঠার তৃতীয় বর্ষেই কেন্দ্রীয় বোর্ড পরীক্ষায় জামিয়ার ছাত্রদের ঐতিহাসিক ফলাফল।",
+              en: "In only its third year, the Jamia's students achieved a historic result in the central board examinations.",
+            }}
+          />
+          <dl className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {resultSummary.map((stat, i) => (
+              <div
+                key={i}
+                className="rounded-2xl border border-navy-800/10 bg-white p-6 text-center shadow-soft"
+              >
+                <dd className="text-5xl font-bold text-teal-600">{n(stat.value)}</dd>
+                <dt className="mt-2 font-bold text-navy-900">{t(stat.label)}</dt>
+                {stat.note && (
+                  <p className="mt-1 text-xs leading-relaxed text-navy-800/55">{t(stat.note)}</p>
+                )}
+              </div>
+            ))}
+          </dl>
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/results"
+              className="inline-flex items-center gap-2 rounded-full bg-navy-900 px-7 py-3 text-sm font-bold text-white transition-colors hover:bg-teal-600"
+            >
+              {lang === "bn" ? "সম্পূর্ণ মেধাতালিকা" : "Full merit lists"}
+              <Icon name="arrow" className="h-4 w-4 rtl:rotate-180" strokeWidth={2.2} />
+            </Link>
+            <a
+              href={site.resultUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-navy-800/20 px-7 py-3 text-sm font-bold text-navy-900 transition-colors hover:border-gold-500 hover:text-gold-600"
+            >
+              {lang === "bn" ? "নিজের ফলাফল দেখুন" : "Check your result"}
+            </a>
+          </div>
+        </Container>
+      </section>
+
+      {/* ── Permanent land ─────────────────────────────────────────────── */}
+      <section className="relative overflow-hidden border-y border-navy-800/10 bg-sky-100/60 py-20">
+        <Container className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="relative">
+            <div className="relative aspect-4/3 overflow-hidden rounded-2xl border-4 border-white bg-navy-800 shadow-lift">
+              <Image
+                src={land.images[0].src}
+                alt={t(land.images[0].caption)}
+                fill
+                sizes="(min-width: 1024px) 520px, 90vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="absolute -bottom-6 -end-4 hidden rounded-2xl bg-gradient-to-br from-navy-900 to-teal-600 px-7 py-5 text-center text-white shadow-lift sm:block">
+              <p className="text-4xl font-bold text-gold-400">{n(land.area)}</p>
+              <p className="mt-1 text-xs caps text-white/70">{t(land.areaUnit)}</p>
+            </div>
+          </div>
+          <div>
+            <SectionHeading
+              align="start"
+              eyebrow={{ bn: "স্থায়ী জায়গা", en: "Permanent Site" }}
+              title={land.title}
+              arabic="الأرض الدائمة"
+            />
+            <p className="text-base leading-relaxed text-navy-800/75">{t(land.body)}</p>
+            <Link
+              href="/about#land"
+              className="mt-8 inline-flex items-center gap-2 rounded-full bg-navy-900 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-teal-600"
+            >
+              {lang === "bn" ? "বিস্তারিত দেখুন" : "Learn more"}
+              <Icon name="arrow" className="h-4 w-4 rtl:rotate-180" strokeWidth={2.2} />
+            </Link>
           </div>
         </Container>
       </section>

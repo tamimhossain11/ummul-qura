@@ -2,7 +2,7 @@ import type { T } from "./i18n";
 
 export const site = {
   nameBn: "জামিয়া উম্মুল কুরা আল-ইসলামিয়া",
-  nameEn: "Jamia Ummol Qura Al Islamia",
+  nameEn: "Jamia Ummul Qura Al Islamia",
   nameAr: "جامعة أم القرى الإسلامية براهمن باريا بنغلاديش",
   shortAr: "جامعة أم القرى الإسلامية",
   tagline: {
@@ -11,16 +11,42 @@ export const site = {
   } satisfies T,
   established: "2022",
   address: {
-    bn: "ফুলবাড়িয়া, সদর, ব্রাহ্মণবাড়িয়া, বাংলাদেশ",
-    en: "Phulbaria, Sadar, Brahmanbaria, Bangladesh",
+    bn: "ফুলবাড়িয়া বাস স্ট্যান্ড সংলগ্ন, সদর, ব্রাহ্মণবাড়িয়া, বাংলাদেশ",
+    en: "Beside Phulbaria Bus Stand, Sadar, Brahmanbaria, Bangladesh",
   } satisfies T,
-  // Contact details are intentionally left blank until confirmed by the madrasah.
-  phone: "",
-  phoneAlt: "",
-  email: "",
+
+  /** The madrasah's single contact number — also the Principal's. */
+  phone: {
+    number: "01722139364",
+    display: "০১৭২২-১৩৯৩৬৪",
+    displayEn: "01722-139364",
+    label: {
+      bn: "মাদরাসা ও প্রিন্সিপাল",
+      en: "Madrasah & Principal",
+    } satisfies T,
+  },
+
+  emails: [
+    {
+      address: "jamiaummulqura22@gmail.com",
+      label: { bn: "মাদরাসা অফিস", en: "Madrasah Office" } satisfies T,
+    },
+    {
+      address: "muftiobaidullah64@gmail.com",
+      label: { bn: "প্রিন্সিপাল", en: "Principal" } satisfies T,
+    },
+  ],
+
+  /** Google Maps: the pin the madrasah shared, and its embeddable form.
+      Coordinates resolved from that shared link. */
+  mapLink: "https://maps.app.goo.gl/k65GRYrU255qQYgr9",
+  mapEmbed: "https://maps.google.com/maps?q=23.9787921,91.0999891&z=17&output=embed",
+
+  /** Student results, published on the madrasah's QMM Soft portal. */
+  resultUrl: "https://qmmsoft.com/1177/student_result",
+
   facebook: "",
   youtube: "",
-  mapEmbed: "",
 };
 
 /** Navigation. Groups render as dropdowns on desktop, accordions on mobile. */
@@ -44,6 +70,7 @@ export const nav: NavItem[] = [
     children: [
       { href: "/departments", label: { bn: "বিভাগসমূহ", en: "Departments" } },
       { href: "/admission", label: { bn: "ভর্তি তথ্য", en: "Admission" } },
+      { href: "/results", label: { bn: "পরীক্ষার ফলাফল", en: "Examination Results" } },
       { href: "/facilities", label: { bn: "সুযোগ-সুবিধা", en: "Facilities" } },
     ],
   },

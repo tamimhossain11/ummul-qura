@@ -11,12 +11,14 @@ function InfoCard({
   title,
   value,
   href,
+  note,
   placeholder,
 }: {
   icon: "pin" | "phone" | "mail" | "clock";
   title: string;
   value: string;
   href?: string;
+  note?: string;
   placeholder: string;
 }) {
   return (
@@ -36,6 +38,9 @@ function InfoCard({
         )
       ) : (
         <p className="text-sm italic text-navy-800/35">{placeholder}</p>
+      )}
+      {value && note && (
+        <p className="mt-1.5 text-xs text-navy-800/45">{note}</p>
       )}
     </div>
   );
@@ -72,21 +77,23 @@ export function ContactView() {
             <InfoCard
               icon="phone"
               title={lang === "bn" ? "মোবাইল" : "Phone"}
-              value={site.phone}
-              href={site.phone ? `tel:${site.phone}` : undefined}
+              value={lang === "bn" ? site.phone.display : site.phone.displayEn}
+              href={`tel:+880${site.phone.number.slice(1)}`}
+              note={t(site.phone.label)}
               placeholder={blank}
             />
             <InfoCard
               icon="mail"
-              title={lang === "bn" ? "ই-মেইল" : "Email"}
-              value={site.email}
-              href={site.email ? `mailto:${site.email}` : undefined}
+              title={lang === "bn" ? "মাদরাসা অফিস" : "Madrasah Office"}
+              value={site.emails[0].address}
+              href={`mailto:${site.emails[0].address}`}
               placeholder={blank}
             />
             <InfoCard
-              icon="clock"
-              title={lang === "bn" ? "অফিস সময়" : "Office Hours"}
-              value=""
+              icon="mail"
+              title={lang === "bn" ? "প্রিন্সিপাল" : "Principal"}
+              value={site.emails[1].address}
+              href={`mailto:${site.emails[1].address}`}
               placeholder={blank}
             />
           </div>
@@ -109,23 +116,22 @@ export function ContactView() {
             </p>
 
             <div className="mt-8 overflow-hidden rounded-2xl border border-navy-800/10 bg-white shadow-soft">
-              {site.mapEmbed ? (
-                <iframe
-                  src={site.mapEmbed}
-                  title={lang === "bn" ? "জামিয়ার অবস্থান" : "Location of the Jamia"}
-                  loading="lazy"
-                  className="h-64 w-full border-0"
-                  referrerPolicy="no-referrer-when-downgrade"
-                />
-              ) : (
-                <div className="flex h-64 flex-col items-center justify-center gap-3 bg-sky-100/70 text-center">
-                  <Icon name="pin" className="h-8 w-8 text-teal-600" />
-                  <p className="text-sm font-semibold text-navy-800/70">{t(site.address)}</p>
-                  <p className="text-xs italic text-navy-800/40">
-                    {lang === "bn" ? "মানচিত্র শীঘ্রই সংযোজন করা হবে" : "Map to be added shortly"}
-                  </p>
-                </div>
-              )}
+              <iframe
+                src={site.mapEmbed}
+                title={lang === "bn" ? "জামিয়ার অবস্থান" : "Location of the Jamia"}
+                loading="lazy"
+                className="h-64 w-full border-0"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+              <a
+                href={site.mapLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 border-t border-navy-800/10 bg-sky-50 py-3.5 text-sm font-bold text-teal-600 transition-colors hover:bg-sky-100 hover:text-gold-600"
+              >
+                <Icon name="pin" className="h-4 w-4" strokeWidth={2} />
+                {lang === "bn" ? "গুগল ম্যাপে দিকনির্দেশ দেখুন" : "Get directions on Google Maps"}
+              </a>
             </div>
           </div>
 
