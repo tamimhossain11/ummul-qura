@@ -370,7 +370,7 @@ export const notices: Notice[] = [];
 
 export const gallery: { src: string; caption: T }[] = [
   { src: "/campus-signboard.png", caption: { bn: "জামিয়ার সম্মুখভাগ ও নামফলক", en: "The Jamia frontage and its signboard" } },
-  { src: "/cover.jpeg", caption: { bn: "জামিয়ার সম্মুখ চিত্র ও মসজিদুল মিসবাহ", en: "The Jamia frontage and Masjidul Misbah" } },
+  { src: "/cover.jpeg", caption: { bn: "প্রস্তাবিত মাদরাসা ও মসজিদের নকশা", en: "Design of the proposed madrasah and mosque" } },
   { src: "/land/land-1.jpeg", caption: { bn: "জামিয়ার ১০২ শতক স্থায়ী জায়গা", en: "The Jamia's 102 decimals of permanent land" } },
   { src: "/land/land-2.jpeg", caption: { bn: "স্থায়ী জায়গা পরিদর্শনে উস্তাদমণ্ডলী", en: "Teachers visiting the permanent site" } },
   { src: "/banners/new-addition.jpeg", caption: { bn: "রমজান উপলক্ষে বিশেষ দুটি কোর্স", en: "Two special Ramadan courses" } },
@@ -391,8 +391,8 @@ export const about = {
     en: "Jamia Ummul Qura Al Islamia is an independent institution of Islamic learning founded in 2022 at Phulbaria, Brahmanbaria Sadar. Named in relation to Umm al-Qura, the blessed name of Makkah, the Jamia exists to raise a generation grounded in the sound knowledge of Qur'an and Sunnah, shaped by the way of the pious predecessors, and equipped for its own age.",
   } satisfies T,
   history: {
-    bn: "প্রতিষ্ঠার সূচনালগ্ন থেকেই জামিয়া ছাত্রদের জন্য একটি নিরাপদ, সুশৃঙ্খল ও ইলমী পরিবেশ নিশ্চিত করে আসছে। নিজস্ব প্রাঙ্গণে রয়েছে শ্রেণিকক্ষ, দারুল ইক্বামা এবং 'মাসজিদুল মিসবাহ'। অল্প সময়ের ব্যবধানে মক্তব থেকে শুরু করে হিফজ ও কিতাব বিভাগ পর্যন্ত ধারাবাহিক শিক্ষাক্রম চালু হয়েছে এবং জেলাব্যাপী হিফজুল কুরআন প্রতিযোগিতা, আন্তর্জাতিক আরবি ভাষা দিবসসহ নানা আয়োজনে জামিয়া ব্রাহ্মণবাড়িয়ার দ্বীনি অঙ্গনে স্বতন্ত্র পরিচিতি লাভ করেছে।",
-    en: "From its earliest days the Jamia has kept a safe, orderly and scholarly environment for its students. Its own grounds hold the classrooms, the residential hall and Masjidul Misbah. In a short span it has opened a continuous course of study from Maktab through Hifz to the Kitab department, and through district-wide Hifz competitions and observances such as World Arabic Language Day it has earned a distinct place in the religious life of Brahmanbaria.",
+    bn: "প্রতিষ্ঠার সূচনালগ্ন থেকেই জামিয়া ছাত্রদের জন্য একটি নিরাপদ, সুশৃঙ্খল ও ইলমী পরিবেশ নিশ্চিত করে আসছে। নিজস্ব প্রাঙ্গণে রয়েছে শ্রেণিকক্ষ, দারুল ইক্বামা ও নামাযের ব্যবস্থা; প্রস্তাবিত স্থায়ী ক্যাম্পাসে থাকবে 'মাসজিদুল মিসবাহ'। অল্প সময়ের ব্যবধানে মক্তব থেকে শুরু করে হিফজ ও কিতাব বিভাগ পর্যন্ত ধারাবাহিক শিক্ষাক্রম চালু হয়েছে এবং জেলাব্যাপী হিফজুল কুরআন প্রতিযোগিতা, আন্তর্জাতিক আরবি ভাষা দিবসসহ নানা আয়োজনে জামিয়া ব্রাহ্মণবাড়িয়ার দ্বীনি অঙ্গনে স্বতন্ত্র পরিচিতি লাভ করেছে।",
+    en: "From its earliest days the Jamia has kept a safe, orderly and scholarly environment for its students. Its own grounds hold the classrooms, the residential hall and a prayer space; the proposed permanent campus will carry Masjidul Misbah. In a short span it has opened a continuous course of study from Maktab through Hifz to the Kitab department, and through district-wide Hifz competitions and observances such as World Arabic Language Day it has earned a distinct place in the religious life of Brahmanbaria.",
   } satisfies T,
   mission: {
     bn: "কুরআন-সুন্নাহভিত্তিক নির্ভুল ইলম বিতরণ, আখলাক ও আদবের পরিচর্যা এবং সমাজের প্রতি দায়বদ্ধ যোগ্য আলেম তৈরি করা।",
@@ -472,7 +472,7 @@ export const facilities: { icon: string; title: T; body: T }[] = [
   {
     icon: "mosque",
     title: { bn: "মাসজিদুল মিসবাহ", en: "Masjidul Misbah" },
-    body: { bn: "জামিয়ার নিজস্ব প্রশস্ত মসজিদ, যেখানে পাঁচ ওয়াক্ত জামাত ও তারবিয়াতী মজলিস অনুষ্ঠিত হয়।", en: "The Jamia's own spacious mosque, host to the five daily congregations and to spiritual gatherings." },
+    body: { bn: "পাঁচ ওয়াক্ত জামাত ও তারবিয়াতী মজলিসের ব্যবস্থা; প্রস্তাবিত স্থায়ী ক্যাম্পাসে থাকবে প্রশস্ত 'মাসজিদুল মিসবাহ'।", en: "The five daily congregations and spiritual gatherings are held here; the proposed permanent campus will carry a spacious Masjidul Misbah." },
   },
   {
     icon: "home",

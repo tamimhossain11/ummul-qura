@@ -80,8 +80,8 @@ export function HomeView() {
               <Image
                 src="/banners/campus.jpeg"
                 alt={t({
-                  bn: "জামিয়া উম্মুল কুরা আল-ইসলামিয়ার প্রাঙ্গণ ও মাসজিদুল মিসবাহ",
-                  en: "The grounds of Jamia Ummul Qura Al Islamia and Masjidul Misbah",
+                  bn: "জামিয়া উম্মুল কুরা আল-ইসলামিয়ার প্রস্তাবিত মাদরাসা ও মসজিদের নকশা",
+                  en: "The proposed madrasah and mosque of Jamia Ummul Qura Al Islamia",
                 })}
                 fill
                 priority
@@ -91,7 +91,7 @@ export function HomeView() {
             </div>
             <div className="absolute -bottom-5 start-1/2 -translate-x-1/2 rounded-full border border-gold-500/40 bg-navy-950/90 px-6 py-2.5 text-center backdrop-blur rtl:translate-x-1/2">
               <p className="whitespace-nowrap text-sm font-semibold text-gold-300">
-                {lang === "bn" ? "মাসজিদুল মিসবাহ" : "Masjidul Misbah"}
+                {lang === "bn" ? "প্রস্তাবিত মাদরাসা ও মসজিদ" : "Proposed Madrasah & Mosque"}
               </p>
             </div>
           </div>
@@ -126,8 +126,8 @@ export function HomeView() {
               />
               <p className="text-base leading-relaxed text-navy-800/75">
                 {lang === "bn"
-                  ? "ফুলবাড়িয়া বাস স্ট্যান্ড সংলগ্ন এই ভবনেই বর্তমানে জামিয়ার সকল শিক্ষা কার্যক্রম পরিচালিত হচ্ছে। এখানে রয়েছে শ্রেণিকক্ষ, দারুল ইক্বামা ও মাসজিদুল মিসবাহ। নিজস্ব ১০২ শতক জমিতে স্থায়ী ক্যাম্পাসের নির্মাণকাজ সম্পন্ন হলে জামিয়া সেখানে স্থানান্তরিত হবে ইনশাআল্লাহ।"
-                  : "All of the Jamia's teaching is presently carried on in this building beside Phulbaria Bus Stand, which houses the classrooms, the residential hall and Masjidul Misbah. Once the permanent campus is built on our own 102 decimals of land, the Jamia will move there, inshaAllah."}
+                  ? "ফুলবাড়িয়া বাস স্ট্যান্ড সংলগ্ন এই ভবনেই বর্তমানে জামিয়ার সকল শিক্ষা কার্যক্রম পরিচালিত হচ্ছে। এখানে রয়েছে শ্রেণিকক্ষ, দারুল ইক্বামা ও নামাযের ব্যবস্থা। নিজস্ব ১০২ শতক জমিতে স্থায়ী ক্যাম্পাসের নির্মাণকাজ সম্পন্ন হলে জামিয়া সেখানে স্থানান্তরিত হবে ইনশাআল্লাহ।"
+                  : "All of the Jamia's teaching is presently carried on in this building beside Phulbaria Bus Stand, which houses the classrooms, the residential hall and the prayer space. Once the permanent campus is built on our own 102 decimals of land, the Jamia will move there, inshaAllah."}
               </p>
               <Link
                 href="/about#land"
@@ -170,7 +170,7 @@ export function HomeView() {
             <div className="mask-arch relative aspect-4/3 overflow-hidden border-4 border-white bg-navy-800 shadow-lift">
               <Image
                 src="/banners/campus.jpeg"
-                alt={t({ bn: "জামিয়ার প্রাঙ্গণ", en: "The Jamia grounds" })}
+                alt={t({ bn: "প্রস্তাবিত মাদরাসা ও মসজিদের নকশা", en: "The proposed madrasah and mosque" })}
                 fill
                 sizes="(min-width: 1024px) 520px, 90vw"
                 className="object-cover"

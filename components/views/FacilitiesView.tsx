@@ -40,7 +40,7 @@ export function FacilitiesView() {
           <div className="mask-arch relative aspect-4/3 overflow-hidden border-4 border-white bg-navy-800 shadow-lift">
             <Image
               src="/cover.jpeg"
-              alt={t({ bn: "জামিয়ার প্রাঙ্গণ ও মসজিদ", en: "The Jamia grounds and mosque" })}
+              alt={t({ bn: "প্রস্তাবিত মাদরাসা ও মসজিদের নকশা", en: "The proposed madrasah and mosque" })}
               fill
               sizes="(min-width: 1024px) 520px, 90vw"
               className="object-cover"
