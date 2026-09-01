@@ -53,6 +53,15 @@ export function Header() {
               <Icon name="calendar" className="h-3.5 w-3.5 text-gold-400" strokeWidth={1.8} />
               {lang === "bn" ? "প্রতিষ্ঠিত ২০২২ ঈসায়ী" : "Established 2022"}
             </span>
+            <a
+              href={site.guardianUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 font-semibold text-white/80 transition-colors hover:text-gold-300"
+            >
+              <Icon name="users" className="h-3.5 w-3.5 text-gold-400" strokeWidth={1.8} />
+              {lang === "bn" ? "গার্ডিয়ান প্যানেল" : "Guardian Panel"}
+            </a>
             <LanguageToggle compact />
           </div>
         </div>
@@ -227,6 +236,15 @@ export function Header() {
             >
               {lang === "bn" ? "ভর্তি চলছে" : "Apply Now"}
             </Link>
+            <a
+              href={site.guardianUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex items-center justify-center gap-2 rounded-full border border-white/30 py-3 text-center text-base font-bold text-white"
+            >
+              <Icon name="users" className="h-4 w-4 text-gold-400" strokeWidth={2} />
+              {lang === "bn" ? "গার্ডিয়ান প্যানেল" : "Guardian Panel"}
+            </a>
           </nav>
         </div>
       )}

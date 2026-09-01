@@ -1,7 +1,7 @@
 "use client";
 
 import { donationCauses } from "@/lib/content";
-import { donationChannels } from "@/lib/site";
+import { donationChannels, site } from "@/lib/site";
 import { Icon } from "../Icon";
 import { useLang } from "../LanguageProvider";
 import { Ornament } from "../Ornament";
@@ -147,7 +147,36 @@ export function DonationView() {
             </div>
           </div>
 
-          <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-gold-400/50 bg-gold-200/25 p-6 text-center">
+          {/* Online donation portal */}
+          <div className="relative mx-auto mt-12 max-w-2xl overflow-hidden rounded-2xl border border-gold-400/50 bg-gradient-to-br from-navy-900 to-teal-600 p-8 text-center text-white sm:p-10">
+            <div className="pattern-girih pointer-events-none absolute inset-0 opacity-[0.08]" />
+            <div className="relative">
+              <span className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-white/10 ring-1 ring-white/25">
+                <Icon name="gift" className="h-8 w-8 text-gold-300" />
+              </span>
+              <h3 className="text-2xl font-bold">
+                {lang === "bn" ? "অনলাইনে অনুদান পাঠান" : "Donate Online"}
+              </h3>
+              <Ornament tone="light" className="mx-auto my-4" />
+              <p className="mx-auto max-w-md text-balance text-sm leading-relaxed text-white/75">
+                {lang === "bn"
+                  ? "জামিয়ার অনলাইন পোর্টালের মাধ্যমে নিরাপদে আপনার অনুদান পাঠাতে পারেন।"
+                  : "You can send your donation securely through the Jamia's online portal."}
+              </p>
+              <a
+                href={site.donationUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex items-center gap-2 rounded-full bg-gold-500 px-8 py-4 text-base font-bold text-navy-950 shadow-lg transition-all hover:-translate-y-0.5 hover:bg-gold-400"
+              >
+                {lang === "bn" ? "আপনার অনুদান গ্রহণ" : "Make Your Donation"}
+                <Icon name="arrow" className="h-4 w-4 rtl:rotate-180" strokeWidth={2.2} />
+              </a>
+              <p className="mt-3 text-xs text-white/45">qmmsoft.com</p>
+            </div>
+          </div>
+
+          <div className="mx-auto mt-8 max-w-2xl rounded-2xl border border-gold-400/50 bg-gold-200/25 p-6 text-center">
             <h3 className="flex items-center justify-center gap-2 font-bold text-navy-900">
               <Icon name="heart" className="h-5 w-5 text-gold-600" strokeWidth={2} />
               {lang === "bn" ? "সরাসরি জামিয়ায় আসুন" : "Visit the Jamia in person"}

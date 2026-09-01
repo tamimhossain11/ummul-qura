@@ -42,7 +42,10 @@ export const site = {
   mapLink: "https://maps.app.goo.gl/k65GRYrU255qQYgr9",
   mapEmbed: "https://maps.google.com/maps?q=23.9787921,91.0999891&z=17&output=embed",
 
-  /** Student results, published on the madrasah's QMM Soft portal. */
+  /** The madrasah's QMM Soft portal — online admission and published results. */
+  admissionUrl: "https://qmmsoft.com/1177/online_admission",
+  donationUrl: "https://qmmsoft.com/1177/donation",
+  guardianUrl: "https://qmmsoft.com/1177/login",
   resultUrl: "https://qmmsoft.com/1177/student_result",
 
   facebook: "https://www.facebook.com/share/1BqehgjH1v/",

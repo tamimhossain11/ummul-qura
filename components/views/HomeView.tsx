@@ -245,6 +245,43 @@ export function HomeView() {
         </Container>
       </section>
 
+      {/* ── Online admission ───────────────────────────────────────────── */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400 py-14">
+        <div className="pattern-girih-dark pointer-events-none absolute inset-0 opacity-[0.10]" />
+        <Container className="relative flex flex-col items-center gap-8 text-center lg:flex-row lg:justify-between lg:text-start">
+          <div className="max-w-2xl">
+            <p className="caps mb-2 text-xs text-navy-950/60">
+              {lang === "bn" ? "ভর্তি চলছে" : "Admissions Open"}
+            </p>
+            <h2 className="text-balance text-3xl font-bold text-navy-950 sm:text-4xl">
+              {lang === "bn" ? "অনলাইনেই ভর্তির আবেদন করুন" : "Apply for Admission Online"}
+            </h2>
+            <p className="mt-3 text-balance leading-relaxed text-navy-950/70">
+              {lang === "bn"
+                ? "ঘরে বসেই জামিয়ার অনলাইন পোর্টাল থেকে ভর্তির আবেদন ফরম পূরণ করুন — কোনো ঝামেলা ছাড়াই, কয়েক মিনিটেই।"
+                : "Fill in the admission form from home through the Jamia's online portal — no queues, and only a few minutes."}
+            </p>
+          </div>
+          <div className="flex shrink-0 flex-col items-center gap-3 sm:flex-row">
+            <a
+              href={site.admissionUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-navy-950 px-8 py-4 text-base font-bold text-gold-300 shadow-xl transition-all hover:-translate-y-0.5 hover:bg-navy-900"
+            >
+              <Icon name="pen" className="h-5 w-5" strokeWidth={2} />
+              {lang === "bn" ? "অনলাইন ভর্তি আবেদন" : "Apply online"}
+            </a>
+            <Link
+              href="/admission"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-navy-950/25 px-7 py-3.5 text-sm font-bold text-navy-950 transition-colors hover:border-navy-950/60"
+            >
+              {lang === "bn" ? "ভর্তি তথ্য" : "Admission details"}
+            </Link>
+          </div>
+        </Container>
+      </section>
+
       {/* ── Results ────────────────────────────────────────────────────── */}
       <section className="py-20">
         <Container>

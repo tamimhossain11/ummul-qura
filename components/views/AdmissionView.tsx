@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { admission, departments } from "@/lib/content";
+
+/** Nida'ul Arabiyyah and Darul Iqama take no direct enrolment. */
+const directEntryDepartments = departments.filter((d) => d.directAdmission !== false);
 import { site } from "@/lib/site";
 import { Icon } from "../Icon";
 import { useLang } from "../LanguageProvider";
@@ -18,6 +21,32 @@ export function AdmissionView() {
         arabic="القبول والتسجيل"
         subtitle={admission.intro}
       />
+
+      {/* Apply online — put first, so it is the first thing offered */}
+      <section className="relative overflow-hidden bg-gradient-to-r from-gold-600 via-gold-500 to-gold-400 py-12">
+        <div className="pattern-girih-dark pointer-events-none absolute inset-0 opacity-[0.10]" />
+        <Container className="relative flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-start">
+          <div>
+            <h2 className="text-balance text-2xl font-bold text-navy-950 sm:text-3xl">
+              {lang === "bn" ? "অনলাইনেই আবেদন করুন" : "Apply Online"}
+            </h2>
+            <p className="mt-2 text-balance text-sm leading-relaxed text-navy-950/70">
+              {lang === "bn"
+                ? "জামিয়ার অনলাইন পোর্টালে ভর্তির আবেদন ফরম পূরণ করুন।"
+                : "Complete the admission form on the Jamia's online portal."}
+            </p>
+          </div>
+          <a
+            href={site.admissionUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center gap-2 rounded-full bg-navy-950 px-8 py-4 text-base font-bold text-gold-300 shadow-xl transition-all hover:-translate-y-0.5 hover:bg-navy-900"
+          >
+            <Icon name="pen" className="h-5 w-5" strokeWidth={2} />
+            {lang === "bn" ? "অনলাইন ভর্তি আবেদন" : "Apply online"}
+          </a>
+        </Container>
+      </section>
 
       {/* Process */}
       <section className="py-20">
@@ -116,7 +145,7 @@ export function AdmissionView() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-navy-800/10">
-                  {departments.map((d) => (
+                  {directEntryDepartments.map((d) => (
                     <tr key={d.slug} className="transition-colors hover:bg-sky-50">
                       <td className="px-6 py-4 font-semibold text-navy-900">{t(d.name)}</td>
                       <td dir="rtl" className="font-arabic px-6 py-4 text-base text-navy-800/60">
@@ -144,13 +173,13 @@ export function AdmissionView() {
           <div>
             <SectionHeading
               align="start"
-              eyebrow={{ bn: "ভর্তি অনুসন্ধান", en: "Admission Enquiry" }}
-              title={{ bn: "আপনার জিজ্ঞাসা আমাদের জানান", en: "Send Us Your Enquiry" }}
+              eyebrow={{ bn: "অনলাইন আবেদন", en: "Apply Online" }}
+              title={{ bn: "অনলাইনেই ভর্তির আবেদন করুন", en: "Apply for Admission Online" }}
             />
             <p className="text-base leading-relaxed text-navy-800/75">
               {lang === "bn"
-                ? "ফরমটি পূরণ করে পাঠালে জামিয়ার পক্ষ থেকে যোগাযোগ করা হবে ইনশাআল্লাহ। অথবা সরাসরি জামিয়ার অফিসে চলে আসুন।"
-                : "Fill in the form and the Jamia will get in touch, inshaAllah. You are also welcome to visit the office in person."}
+                ? "জামিয়ার অনলাইন পোর্টাল থেকে সরাসরি ভর্তির আবেদন করা যাবে। আবেদন সম্পন্ন হলে জামিয়ার পক্ষ থেকে যোগাযোগ করা হবে ইনশাআল্লাহ। প্রয়োজনে সরাসরি জামিয়ার অফিসেও আসতে পারেন।"
+                : "You can apply for admission directly through the Jamia's online portal. Once your application is in, the Jamia will be in touch, inshaAllah. You are also welcome to visit the office in person."}
             </p>
             <div className="mt-7 space-y-4">
               <p className="flex items-start gap-3 text-sm text-navy-800/80">
@@ -184,77 +213,35 @@ export function AdmissionView() {
             </Link>
           </div>
 
-          <AdmissionForm />
+          <div className="relative overflow-hidden rounded-2xl border border-gold-400/50 bg-gold-200/25 p-8 text-center sm:p-10">
+            <div className="pattern-girih-dark pointer-events-none absolute inset-0 opacity-[0.05]" />
+            <div className="relative">
+              <span className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-navy-800 to-teal-600 text-white">
+                <Icon name="pen" className="h-8 w-8" />
+              </span>
+              <h3 className="text-2xl font-bold text-navy-900">
+                {lang === "bn" ? "অনলাইন ভর্তি আবেদন" : "Online Admission Application"}
+              </h3>
+              <span className="rule-gold mx-auto my-4 block h-px w-32" />
+              <p className="mx-auto max-w-sm text-balance text-sm leading-relaxed text-navy-800/75">
+                {lang === "bn"
+                  ? "নিচের বোতামে ক্লিক করে জামিয়ার অনলাইন পোর্টালে গিয়ে ভর্তির আবেদন ফরম পূরণ করুন।"
+                  : "Use the button below to open the Jamia's online portal and complete the admission form there."}
+              </p>
+              <a
+                href={site.admissionUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-7 inline-flex items-center gap-2 rounded-full bg-gold-500 px-8 py-4 text-base font-bold text-navy-950 shadow-lg transition-all hover:-translate-y-0.5 hover:bg-gold-400"
+              >
+                {lang === "bn" ? "অনলাইন ভর্তি আবেদন" : "Apply online"}
+                <Icon name="arrow" className="h-4 w-4 rtl:rotate-180" strokeWidth={2.2} />
+              </a>
+              <p className="mt-3 text-xs text-navy-800/45">qmmsoft.com</p>
+            </div>
+          </div>
         </Container>
       </section>
     </>
-  );
-}
-
-function AdmissionForm() {
-  const { t, lang } = useLang();
-
-  const field =
-    "w-full rounded-lg border border-navy-800/15 bg-white px-4 py-2.5 text-sm text-navy-900 outline-none transition-colors placeholder:text-navy-800/35 focus:border-teal-500";
-  const label = "mb-1.5 block text-xs font-bold caps text-navy-800/60";
-
-  return (
-    <form
-      className="rounded-2xl border border-navy-800/10 bg-white p-8 shadow-soft"
-      onSubmit={(e) => e.preventDefault()}
-    >
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div>
-          <label className={label} htmlFor="a-student">
-            {t({ bn: "ছাত্রের নাম", en: "Student's name" })}
-          </label>
-          <input id="a-student" name="student" className={field} autoComplete="name" />
-        </div>
-        <div>
-          <label className={label} htmlFor="a-guardian">
-            {t({ bn: "অভিভাবকের নাম", en: "Guardian's name" })}
-          </label>
-          <input id="a-guardian" name="guardian" className={field} />
-        </div>
-        <div>
-          <label className={label} htmlFor="a-phone">
-            {t({ bn: "মোবাইল নম্বর", en: "Mobile number" })}
-          </label>
-          <input id="a-phone" name="phone" type="tel" className={field} autoComplete="tel" />
-        </div>
-        <div>
-          <label className={label} htmlFor="a-dept">
-            {t({ bn: "কাঙ্ক্ষিত বিভাগ", en: "Preferred department" })}
-          </label>
-          <select id="a-dept" name="department" className={field} defaultValue="">
-            <option value="" disabled>
-              {t({ bn: "নির্বাচন করুন", en: "Select…" })}
-            </option>
-            {departments.map((d) => (
-              <option key={d.slug} value={d.slug}>
-                {t(d.name)}
-              </option>
-            ))}
-          </select>
-        </div>
-      </div>
-      <div className="mt-5">
-        <label className={label} htmlFor="a-note">
-          {t({ bn: "আপনার জিজ্ঞাসা", en: "Your enquiry" })}
-        </label>
-        <textarea id="a-note" name="note" rows={4} className={field} />
-      </div>
-      <button
-        type="submit"
-        className="mt-6 w-full rounded-full bg-gold-500 py-3 text-sm font-bold text-navy-950 transition-colors hover:bg-gold-400"
-      >
-        {lang === "bn" ? "আবেদন পাঠান" : "Send enquiry"}
-      </button>
-      <p className="mt-3 text-center text-xs text-navy-800/45">
-        {lang === "bn"
-          ? "ফরমটি বর্তমানে প্রদর্শনের জন্য; সার্ভার সংযুক্ত হলে সক্রিয় হবে।"
-          : "This form is for display; it will be activated once connected to a server."}
-      </p>
-    </form>
   );
 }

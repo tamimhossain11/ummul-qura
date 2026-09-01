@@ -95,6 +95,8 @@ export type Department = {
   nameAr: string;
   summary: T;
   points: T[];
+  /** False where students are not enrolled directly into the department. */
+  directAdmission?: boolean;
 };
 
 export const departments: Department[] = [
@@ -172,6 +174,7 @@ export const departments: Department[] = [
       { bn: "খুতবা ও প্রবন্ধ প্রতিযোগিতা", en: "Oratory and essay competitions" },
       { bn: "আন্তর্জাতিক আরবি ভাষা দিবস উদযাপন", en: "World Arabic Language Day observance" },
     ],
+    directAdmission: false,
   },
   {
     slug: "darul-iqama",
@@ -187,6 +190,7 @@ export const departments: Department[] = [
       { bn: "নিজস্ব মাতবাখ ও সুষম খাদ্য", en: "In-house kitchen with balanced meals" },
       { bn: "নিয়মতান্ত্রিক দৈনন্দিন রুটিন", en: "A structured daily routine" },
     ],
+    directAdmission: false,
   },
 ];
 
@@ -517,8 +521,8 @@ export const donationCauses: { title: T; body: T }[] = [
     body: { bn: "যাকাত, ফিতরা ও সাধারণ সাদাকা গ্রহণ ও যথাযথ খাতে ব্যয়।", en: "Zakat, fitrah and general sadaqah, received and spent in their rightful channels." },
   },
   {
-    title: { bn: "কুরবানির চামড়া", en: "Qurbani Hides" },
-    body: { bn: "কুরবানির পশুর চামড়া দান করে ছাত্রদের খিদমতে শরিক হোন।", en: "Donate Qurbani hides and take part in the service of our students." },
+    title: { bn: "সাধারণ দান", en: "General Donation" },
+    body: { bn: "যে কোনো পরিমাণ সাধারণ দান — ছাত্রদের খাবার, কিতাব, চিকিৎসা ও জামিয়ার দৈনন্দিন পরিচালনা ব্যয়ে ব্যবহৃত হয়।", en: "A general gift of any amount — spent on students' meals, books and medical care, and on the Jamia's day-to-day running costs." },
   },
 ];
 
