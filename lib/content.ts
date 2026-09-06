@@ -104,7 +104,7 @@ export const departments: Department[] = [
     slug: "maktab",
     icon: "book-open",
     name: { bn: "মক্তব বিভাগ", en: "Maktab (Foundation)" },
-    nameAr: "قسم المكتب",
+    nameAr: "قسم الكُتّاب",
     summary: {
       bn: "শিশুদের জন্য কুরআন শিক্ষার প্রাথমিক স্তর — সহীহ শুদ্ধ উচ্চারণে কায়দা, আমপারা ও প্রয়োজনীয় মাসআলা-মাসায়েল।",
       en: "The first step of Qur'anic learning for children — Qaida, Ampara and essential daily rulings taught with correct pronunciation.",
@@ -113,13 +113,15 @@ export const departments: Department[] = [
       { bn: "সহীহ শুদ্ধ কায়দা ও আমপারা", en: "Qaida and Ampara with correct tajweed" },
       { bn: "দৈনন্দিন দোয়া-মাসায়েল", en: "Daily supplications and rulings" },
       { bn: "আদব-আখলাক গঠন", en: "Formation of character and manners" },
+      { bn: "জেনারেলের প্লে-নার্সারী (বেফাক বোর্ড)", en: "General Play–Nursery (Befaq Board)" },
+      { bn: "জেনারেলের ১ম শ্রেণী (বেফাক বোর্ড)", en: "General Class One (Befaq Board)" },
     ],
   },
   {
     slug: "nazera",
     icon: "quran",
     name: { bn: "নাযেরা বিভাগ", en: "Nazera (Qur'an Recitation)" },
-    nameAr: "قسم الناظرة",
+    nameAr: "قسم النَّظَر وقراءة القرآن الكريم",
     summary: {
       bn: "তাজবীদসহ পূর্ণ কুরআন মাজীদ শুদ্ধভাবে তিলাওয়াতের প্রশিক্ষণ, অভিজ্ঞ ক্বারী সাহেবানের তত্ত্বাবধানে।",
       en: "Training in the correct recitation of the entire Qur'an with tajweed, under experienced Qaris.",
@@ -128,19 +130,20 @@ export const departments: Department[] = [
       { bn: "তাজবীদের মৌলিক নিয়মাবলী", en: "Foundational rules of tajweed" },
       { bn: "নিয়মিত তিলাওয়াত অনুশীলন", en: "Daily supervised recitation" },
       { bn: "মাখরাজ ও সিফাত শুদ্ধিকরণ", en: "Correction of makhraj and sifat" },
+      { bn: "জেনারেলের ২য় শ্রেণি (বেফাক বোর্ড)", en: "General Class Two (Befaq Board)" },
     ],
   },
   {
     slug: "hifz",
     icon: "star",
     name: { bn: "হিফজুল কুরআন বিভাগ", en: "Hifzul Qur'an (Memorisation)" },
-    nameAr: "قسم حفظ القرآن",
+    nameAr: "قسم تحفيظ القرآن الكريم",
     summary: {
-      bn: "সম্পূর্ণ ত্রিশ পারা কুরআনুল কারীম মুখস্থকরণের সুশৃঙ্খল ব্যবস্থা — নিয়মিত সবক, সবকি ও আমুখতা।",
-      en: "A disciplined programme for memorising all thirty juz of the Qur'an, with daily sabaq, sabqi and manzil.",
+      bn: "সম্পূর্ণ ত্রিশ পারা কুরআনুল কারীম মুখস্থকরণের সুশৃঙ্খল ব্যবস্থা — নিয়মিত সবক, সাত সবক, আমুখতা ও দৈনিক তেলাওয়াত।",
+      en: "A disciplined programme for memorising all thirty juz of the Qur'an — regular sabaq, the last seven sabaqs, amukhta and daily recitation.",
     },
     points: [
-      { bn: "দৈনিক সবক, সবকি ও আমুখতা", en: "Daily sabaq, sabqi and manzil" },
+      { bn: "নিয়মিত সবক, সাত সবক, আমুখতা ও দৈনিক তেলাওয়াত", en: "Regular sabaq, the last seven sabaqs, amukhta and daily recitation" },
       { bn: "সাপ্তাহিক ও মাসিক পরীক্ষা", en: "Weekly and monthly assessments" },
       { bn: "জেলাব্যাপী প্রতিযোগিতায় অংশগ্রহণ", en: "Participation in district-wide competitions" },
     ],
@@ -149,30 +152,43 @@ export const departments: Department[] = [
     slug: "kitab",
     icon: "scroll",
     name: { bn: "কিতাব বিভাগ", en: "Kitab (Islamic Sciences)" },
-    nameAr: "قسم الكتب",
+    nameAr: "قسم الكتب الدراسية",
     summary: {
-      bn: "নাহু, সরফ, বালাগাত, ফিকহ, উসূল, হাদীস ও তাফসীরসহ দরসে নিজামীর ধারাবাহিক পাঠদান।",
-      en: "The graded Dars-e-Nizami curriculum: grammar, morphology, rhetoric, fiqh, usul, hadith and tafsir.",
+      bn: "হুফফাজ থেকে মিসকাত জামাত পর্যন্ত — নাহু, সরফ, বালাগাত, ফিকহ, উসূল, হাদীস ও তাফসীরসহ দরসে নিজামীর ধারাবাহিক পাঠদান।",
+      en: "From the Huffaz class up to Mishkat — the graded Dars-e-Nizami curriculum: grammar, morphology, rhetoric, fiqh, usul, hadith and tafsir.",
     },
     points: [
+      { bn: "হুফফাজ থেকে মিসকাত পর্যন্ত জামাতসমূহ", en: "Classes from Huffaz through to Mishkat" },
       { bn: "দরসে নিজামীর পূর্ণাঙ্গ সিলেবাস", en: "The complete Dars-e-Nizami syllabus" },
+      {
+        bn: "দরসে নেজামী ও মাদানী নেসাবের সুষম সমন্বয়ে জাতীয় শিক্ষাক্রমের সমন্বিত সিলেবাস",
+        en: "A syllabus balancing Dars-e-Nizami and the Madani nisab with the national curriculum",
+      },
       { bn: "আরবি ভাষায় দক্ষতা অর্জন", en: "Command of the Arabic language" },
       { bn: "গবেষণামূলক পাঠচক্র", en: "Research-oriented study circles" },
     ],
   },
+];
+
+/** Supporting wings — not departments of study, so admission is not direct. */
+export const wings: Department[] = [
   {
     slug: "arabic",
     icon: "pen",
     name: { bn: "নিদাউল আরাবিয়্যাহ — আরবি ভাষা কেন্দ্র", en: "Nida'ul Arabiyyah — Arabic Language Centre" },
     nameAr: "نداء العربية",
     summary: {
-      bn: "কথোপকথন, রচনা ও খুতবায় আরবি ভাষার ব্যবহারিক প্রশিক্ষণ; নিয়মিত 'বারনামাজ আরাবী সাক্বাফী' আয়োজন।",
-      en: "Practical Arabic in conversation, composition and oratory, with the regular Barnamaj Arabi Thaqafi programme.",
+      bn: "কথোপকথন, বক্তৃতা ও লেখালেখির মাধ্যমে আরবি ভাষার ব্যবহারিক দক্ষতা অর্জনের নিয়মিত আয়োজন।",
+      en: "Regular sessions that build practical command of Arabic through conversation, oratory and writing.",
     },
     points: [
       { bn: "মুহাদাসা ও মুবাহাসা অনুশীলন", en: "Conversation and debate practice" },
       { bn: "খুতবা ও প্রবন্ধ প্রতিযোগিতা", en: "Oratory and essay competitions" },
       { bn: "আন্তর্জাতিক আরবি ভাষা দিবস উদযাপন", en: "World Arabic Language Day observance" },
+      {
+        bn: "সাংস্কৃতিক অনুষ্ঠান, নাটিকা, কবিতা আবৃত্তি ও অনুবাদ প্রতিযোগিতাসহ বিবিধ আয়োজন",
+        en: "Cultural programmes, drama, poetry recitation and translation contests",
+      },
     ],
     directAdmission: false,
   },
@@ -191,6 +207,44 @@ export const departments: Department[] = [
       { bn: "নিয়মতান্ত্রিক দৈনন্দিন রুটিন", en: "A structured daily routine" },
     ],
     directAdmission: false,
+  },
+];
+
+/* ── Departmental regulations ─────────────────────────────────────────── */
+
+/** The rules read out to students at the start of the year. */
+export const academicRules: T[] = [
+  {
+    bn: "ক্লাস রুটিন: সকাল ৭:৩০ মিনিট থেকে ১২:৩০ মিনিট পর্যন্ত প্রতি ঘন্টা ৪০ মিনিট করে মোট সাতটি ঘন্টা হয়ে থাকে। দ্বিতীয় ঘন্টার পর ৩০ মিনিট সকালের নাস্তার বিরতি।",
+    en: "Class routine: seven periods of forty minutes each, from 7:30 am to 12:30 pm, with a thirty-minute breakfast break after the second period.",
+  },
+  {
+    bn: "প্রতি সপ্তাহে সোমবার ক্লাসের পর তরবিয়তি মজলিসে ও বুধবার বাদ এশা সাপ্তাহিক সেমিনারে সকল ছাত্র-উস্তাদগণের উপস্থিতি বাধ্যতামূলক।",
+    en: "Attendance is compulsory for every student and teacher at the Monday tarbiyati majlis after class and at the weekly seminar on Wednesday after Isha.",
+  },
+  {
+    bn: "দরখাস্তের মাধ্যমে মুশরিফ উস্তাদ থেকে সুপারিশ নিয়ে তালিমাত থেকে মঞ্জুর করে মাসিক ছুটি নেওয়ার সুযোগ রয়েছে। এছাড়া দুই ঈদে ১০ দিন করে ও সাময়িক পরীক্ষাগুলোর পরে এক সপ্তাহ করে ছুটির ব্যবস্থা রয়েছে।",
+    en: "Monthly leave may be taken by written application, endorsed by the mushrif ustad and approved by the Talimat office. There is also ten days' leave for each of the two Eids and a week after each terminal examination.",
+  },
+  {
+    bn: "ছুটি বিহীন এক সপ্তাহ অনুপস্থিত থাকলে হাজিরা খাতা থেকে নাম কেটে যায়। ভর্তি নবায়ন করে হাজিরা খাতায় নতুন করে নাম উঠাতে হয়।",
+    en: "A week's absence without leave strikes the student's name from the attendance register; the admission must be renewed for the name to be entered afresh.",
+  },
+  {
+    bn: "প্রতি বছর চারটি পরীক্ষা হয়: কোরবানির আগে মান নিরূপণ, ১ম সাময়িক, ২য় সাময়িক ও বার্ষিক পরীক্ষা।",
+    en: "Four examinations are held each year: the assessment before Qurbani, the first terminal, the second terminal and the annual examination.",
+  },
+  {
+    bn: "কোনো পরীক্ষায় ছুটি বিহীন অনুপস্থিত থাকলে হাজিরা খাতা থেকে নাম কেটে যায়।",
+    en: "Absence from any examination without leave strikes the student's name from the attendance register.",
+  },
+  {
+    bn: "বেফাক বোর্ড পরীক্ষায় অংশগ্রহণের জন্য ন্যূনতম জায়্যিদ জিদ্দান ও এদারা বোর্ডে অংশগ্রহণের জন্য মাদরাসা পরীক্ষায় মুমতাজ হওয়া শর্ত।",
+    en: "Sitting the Befaq board examination requires at least Jayyid Jiddan, and the Edara board requires Mumtaz in the madrasah examination.",
+  },
+  {
+    bn: "দরসে সকলের ইউনিফর্ম (সাদা পাঞ্জাবি-সেলোয়ার) পরা বাধ্যতামূলক।",
+    en: "The uniform — white panjabi and salwar — is compulsory for everyone in the dars.",
   },
 ];
 
@@ -461,13 +515,107 @@ export const admission = {
     { bn: "ছাত্রের সদ্য তোলা ২ কপি পাসপোর্ট সাইজ ছবি", en: "Two recent passport-size photographs of the student" },
     { bn: "অভিভাবকের জাতীয় পরিচয়পত্রের ফটোকপি", en: "Photocopy of the guardian's National ID card" },
     { bn: "অভিভাবকের ১ কপি পাসপোর্ট সাইজ ছবি", en: "One passport-size photograph of the guardian" },
+    {
+      bn: "পূর্ববর্তী শিক্ষাপ্রতিষ্ঠানের প্রয়োজনীয় কাগজপত্র/সনদ (প্রযোজ্য ক্ষেত্রে)",
+      en: "Papers or certificates from the previous institution, where applicable",
+    },
+    {
+      bn: "হিফজ বা পূর্বপাঠ্য সংক্রান্ত সনদ/প্রমাণপত্র (প্রযোজ্য ক্ষেত্রে)",
+      en: "Certificate or proof of Hifz or prior study, where applicable",
+    },
   ],
+  documentsNote: {
+    bn: "বিশেষ দ্রষ্টব্য: প্রয়োজনে কর্তৃপক্ষ অতিরিক্ত কাগজপত্র চাইতে পারে।",
+    en: "Please note: the authorities may ask for further documents if needed.",
+  } satisfies T,
   rules: [
     { bn: "ভর্তির সময় ছাত্রকে অভিভাবকসহ উপস্থিত থাকতে হবে।", en: "The student must attend the admission in person with a guardian." },
     { bn: "আবাসিক ছাত্রদের জামিয়ার নিয়মকানুন মেনে চলা আবশ্যক।", en: "Residential students are required to abide by the Jamia's regulations." },
     { bn: "জমাকৃত ফরম ও ফি কোনো অবস্থাতেই ফেরতযোগ্য নয়।", en: "Submitted forms and fees are not refundable under any circumstance." },
     { bn: "তথ্য গোপন করলে যে কোনো সময় ভর্তি বাতিল বলে গণ্য হবে।", en: "Concealing information renders the admission void at any time." },
   ],
+
+  /** What a student must already have before joining the Kitab department. */
+  eligibility: [
+    {
+      bn: "হুফফাজ জামাতে ভর্তিচ্ছু শিক্ষার্থীকে হাফেজে কুরআন হতে হবে।",
+      en: "An applicant to the Huffaz class must be a hafiz of the Qur'an.",
+    },
+    {
+      bn: "সাধারণ (জেনারেল) বিষয়সমূহ সম্পর্কে প্রাথমিক ধারণা থাকতে হবে।",
+      en: "A basic grounding in the general subjects is required.",
+    },
+    { bn: "শুদ্ধভাবে বাংলা পড়তে পারতে হবে।", en: "The student must be able to read Bengali correctly." },
+    {
+      bn: "নির্ধারিত ভর্তি পরীক্ষায় সন্তোষজনক ফলাফল করতে হবে।",
+      en: "A satisfactory result in the prescribed admission test is required.",
+    },
+  ] satisfies T[],
+
+  /** The books a student is expected to have finished before each jamaat. */
+  jamaatPrerequisites: [
+    { jamaat: { bn: "নাহবেমীর জামাত", en: "Nahwemir" }, requires: { bn: "মীযানুস সরফ, এসো আরবি শিখি ও উর্দু", en: "Mizanus Sarf, Esho Arabi Shikhi and Urdu" } },
+    { jamaat: { bn: "হেদায়াতুন নাহু জামাত", en: "Hidayatun Nahw" }, requires: { bn: "নাহবেমীর কিতাব, রওজাতুল আদব", en: "Nahwemir and Rawdatul Adab" } },
+    { jamaat: { bn: "কাফিয়া জামাত", en: "Kafiya" }, requires: { bn: "হেদায়াতুন নাহু কিতাব", en: "Hidayatun Nahw" } },
+    { jamaat: { bn: "শরহে বেকায়া জামাত", en: "Sharh-e-Biqaya" }, requires: { bn: "কাফিয়া, উসূলুশ শাশী", en: "Kafiya and Usulush Shashi" } },
+    { jamaat: { bn: "জালালাইন জামাত", en: "Jalalayn" }, requires: { bn: "শরহে বেকায়া, নূরুল আনওয়ার", en: "Sharh-e-Biqaya and Nurul Anwar" } },
+    { jamaat: { bn: "মিশকাত জামাত", en: "Mishkat" }, requires: { bn: "হেদায়া, জালালাইন", en: "Hidaya and Jalalayn" } },
+  ],
+
+  eligibilityNote: {
+    bn: "বিশেষ দ্রষ্টব্য: শিক্ষার্থীর যোগ্যতা ও পূর্বপাঠ্য যাচাই করে উপযুক্ত জামাত নির্ধারণ করা হবে।",
+    en: "Please note: the appropriate jamaat is settled after the student's attainment and prior reading have been assessed.",
+  } satisfies T,
+
+  /** How the entrance assessment is conducted. */
+  testRules: [
+    {
+      bn: "শিক্ষার্থীর পূর্বপাঠ্য, শিক্ষাগত যোগ্যতা, কুরআন তিলাওয়াত, আরবি ও অন্যান্য প্রয়োজনীয় বিষয়ের দক্ষতা যাচাইয়ের জন্য ভর্তি পরীক্ষা অনুষ্ঠিত হবে।",
+      en: "An admission test is held to assess the student's prior reading, attainment, Qur'anic recitation, Arabic and other necessary subjects.",
+    },
+    {
+      bn: "ভর্তি পরীক্ষার বিষয় ও জামাত নির্ধারণের পদ্ধতি দায়িত্বশীল উস্তাদগণ শিক্ষার্থীর যোগ্যতা বিবেচনা করে নির্ধারণ করবেন।",
+      en: "The subjects of the test and the way the jamaat is settled are decided by the responsible teachers in the light of the student's attainment.",
+    },
+    {
+      bn: "ভর্তি পরীক্ষায় উত্তীর্ণ শিক্ষার্থীদের পরবর্তী ভর্তি কার্যক্রম সম্পন্ন করার জন্য কর্তৃপক্ষের নির্দেশনা অনুসরণ করতে হবে।",
+      en: "Successful candidates must follow the instructions of the authorities to complete the remaining admission formalities.",
+    },
+  ] satisfies T[],
+
+  /** Admission fee, and the monthly residential charges by department. */
+  fees: {
+    admission: {
+      amount: { bn: "৩,২০০ টাকা", en: "3,200 Taka" },
+      label: { bn: "সকল বিভাগের ভর্তি ফি", en: "Admission fee, all departments" },
+      note: {
+        bn: "উক্ত ভর্তি ফির মধ্যে আইডি কার্ডের খরচ অন্তর্ভুক্ত রয়েছে।",
+        en: "The cost of the ID card is included in this fee.",
+      },
+    },
+    monthly: [
+      {
+        label: { bn: "কিতাব বিভাগ", en: "Kitab department" },
+        amount: { bn: "২,৫০০ টাকা মাসিক", en: "2,500 Taka a month" },
+        note: { bn: "আবাসিক খরচ (কারেন্ট বিলসহ)", en: "Residential charge, electricity included" },
+      },
+      {
+        label: { bn: "নূরানী, নাযেরা ও হিফজুল কুরআন বিভাগ", en: "Nurani, Nazera and Hifzul Qur'an departments" },
+        amount: { bn: "৪,৫০০ টাকা মাসিক", en: "4,500 Taka a month" },
+        note: { bn: "আবাসিক খরচ", en: "Residential charge" },
+      },
+    ],
+    notes: [
+      {
+        bn: "বিশেষ দ্রষ্টব্য: মাসিক বেতন ও অন্যান্য প্রযোজ্য ফি কর্তৃপক্ষের নির্ধারিত নীতিমালা অনুযায়ী প্রযোজ্য হবে।",
+        en: "Please note: monthly fees and any other charges apply according to the regulations set by the authorities.",
+      },
+      {
+        bn: "বিশেষ দ্রষ্টব্য: কোনো ছাত্র খাবারের পূর্ণ টাকা দিলে তার জন্য আলাদা করে আবাসিক ফি দিতে হবে না।",
+        en: "Please note: a student who pays the full cost of meals is not charged a separate residential fee.",
+      },
+    ] satisfies T[],
+  },
 };
 
 /* ── Facilities ───────────────────────────────────────────────────────── */

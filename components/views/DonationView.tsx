@@ -1,15 +1,17 @@
 "use client";
 
+import Link from "next/link";
 import { donationCauses } from "@/lib/content";
+import { donationAppealIntro, donationClosing, donationProjects } from "@/lib/handbook";
 import { donationChannels, site } from "@/lib/site";
-import { Icon } from "../Icon";
+import { Icon, type IconName } from "../Icon";
 import { useLang } from "../LanguageProvider";
 import { Ornament } from "../Ornament";
 import { PageHero } from "../PageHero";
 import { Container, SectionHeading } from "../Section";
 
 export function DonationView() {
-  const { t, lang } = useLang();
+  const { t, lang, n } = useLang();
 
   return (
     <>
@@ -60,6 +62,79 @@ export function DonationView() {
                 <p className="text-sm leading-relaxed text-navy-800/70">{t(cause.body)}</p>
               </article>
             ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* The appeal in full */}
+      <section className="border-t border-navy-800/10 pb-20 pt-16">
+        <Container>
+          <SectionHeading
+            eyebrow={{ bn: "বিস্তারিত জানুন", en: "In Detail" }}
+            title={{ bn: "দ্বীনের এই মহৎ কাজে আপনিও অংশীদার হোন", en: "Take Your Share in This Work" }}
+            arabic="شاركنا في خدمة الدين"
+          />
+          <div className="mx-auto mt-12 max-w-3xl space-y-5">
+            {donationAppealIntro.map((para, i) => (
+              <p key={i} className="text-balance text-center text-base leading-relaxed text-navy-800/75">
+                {t(para)}
+              </p>
+            ))}
+          </div>
+
+          <div className="mt-14 space-y-6">
+            {donationProjects.map((project, i) => (
+              <article
+                key={i}
+                className="relative overflow-hidden rounded-2xl border border-navy-800/10 bg-white p-8 shadow-soft sm:p-10"
+              >
+                <div className="pattern-girih-dark pointer-events-none absolute -end-8 -top-8 h-32 w-32 opacity-[0.06]" />
+                <div className="relative flex flex-wrap items-center gap-4">
+                  <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-navy-800 to-teal-600 text-white">
+                    <Icon name={project.icon as IconName} className="h-6 w-6" />
+                  </span>
+                  <div>
+                    <p className="text-xs font-bold caps text-teal-600">
+                      {lang === "bn" ? `প্রকল্প ${n(i + 1)}` : `Project ${i + 1}`}
+                    </p>
+                    <h3 className="text-xl font-bold leading-snug text-navy-900 sm:text-2xl">
+                      {t(project.title)}
+                    </h3>
+                  </div>
+                </div>
+                <p className="relative mt-4 text-base font-semibold text-gold-700">
+                  {t(project.lead)}
+                </p>
+                <span className="rule-gold my-5 block h-px w-full" />
+                <div className="relative space-y-4">
+                  {project.body.map((para, j) => (
+                    <p key={j} className="text-sm leading-relaxed text-navy-800/75">
+                      {t(para)}
+                    </p>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-14 max-w-3xl rounded-2xl border border-gold-400/50 bg-gold-200/25 p-8 text-center sm:p-10">
+            <Icon name="heart" className="mx-auto h-9 w-9 text-gold-600" />
+            <h3 className="mt-4 text-2xl font-bold text-navy-900">{t(donationClosing.title)}</h3>
+            <span className="rule-gold mx-auto my-5 block h-px w-32" />
+            <div className="space-y-4">
+              {donationClosing.body.map((para, i) => (
+                <p key={i} className="text-balance text-sm leading-relaxed text-navy-800/80">
+                  {t(para)}
+                </p>
+              ))}
+            </div>
+            <Link
+              href="/scholarships"
+              className="mt-7 inline-flex items-center gap-2 rounded-full bg-navy-900 px-6 py-3 text-sm font-bold text-white transition-colors hover:bg-teal-600"
+            >
+              {lang === "bn" ? "বৃত্তি ও সহায়তা ব্যবস্থা দেখুন" : "See the scholarships and aid"}
+              <Icon name="arrow" className="h-4 w-4 rtl:rotate-180" strokeWidth={2.2} />
+            </Link>
           </div>
         </Container>
       </section>

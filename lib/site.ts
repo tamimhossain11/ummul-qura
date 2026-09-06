@@ -1,19 +1,24 @@
 import type { T } from "./i18n";
 
 export const site = {
-  nameBn: "জামিয়া উম্মুল কুরা আল-ইসলামিয়া",
-  nameEn: "Jamia Ummul Qura Al Islamia",
-  nameAr: "جامعة أم القرى الإسلامية براهمن باريا بنغلاديش",
-  shortAr: "جامعة أم القرى الإسلامية",
+  nameBn: "জামিয়া উম্মুল কুরা আল ইসলামিয়া বাংলাদেশ",
+  nameEn: "Jamia Ummul Qura Al Islamia Bangladesh",
+  nameAr: "جامعة أم القرى الإسلامية بنغلاديش",
+  /** Compact forms for the header lockup, where the full name would truncate. */
+  shortBn: "জামিয়া উম্মুল কুরা",
+  shortEn: "Jamia Ummul Qura",
+  shortAr: "جامعة أم القرى",
   tagline: {
     bn: "কুরআন, সুন্নাহ ও ইলমে দ্বীনের আলোকিত অঙ্গন",
     en: "An illuminated courtyard of the Qur'an, the Sunnah and sacred knowledge",
   } satisfies T,
   established: "2022",
   address: {
-    bn: "ফুলবাড়িয়া বাস স্ট্যান্ড সংলগ্ন, সদর, ব্রাহ্মণবাড়িয়া, বাংলাদেশ",
-    en: "Beside Phulbaria Bus Stand, Sadar, Brahmanbaria, Bangladesh",
+    bn: "দাড়িয়াপুর, সদর, ব্রাহ্মণবাড়িয়া।",
+    en: "Dariapur, Sadar, Brahmanbaria, Bangladesh",
   } satisfies T,
+  /** Shown beneath the Arabic name, on the hero and the footer band. */
+  addressAr: "دريافور، صدر برهمن باريا",
 
   /** The madrasah's single contact number — also the Principal's. */
   phone: {
@@ -51,7 +56,7 @@ export const site = {
   facebook: "https://www.facebook.com/share/1BqehgjH1v/",
   /** WhatsApp uses the same number as the madrasah line. */
   whatsapp: "8801722139364",
-  youtube: "",
+  youtube: "https://youtube.com/@jamiaummulquraalislamia",
 };
 
 /** Mobile-banking and bank details for donations. */
@@ -90,8 +95,11 @@ export const nav: NavItem[] = [
     children: [
       { href: "/departments", label: { bn: "বিভাগসমূহ", en: "Departments" } },
       { href: "/admission", label: { bn: "ভর্তি তথ্য", en: "Admission" } },
+      { href: "/exams", label: { bn: "পরীক্ষা তথ্য", en: "Examinations" } },
       { href: "/results", label: { bn: "পরীক্ষার ফলাফল", en: "Examination Results" } },
       { href: "/facilities", label: { bn: "সুযোগ-সুবিধা", en: "Facilities" } },
+      { href: "/research", label: { bn: "গবেষণা বিভাগ", en: "Research" } },
+      { href: "/scholarships", label: { bn: "বৃত্তি ও অনুদান", en: "Scholarships" } },
     ],
   },
   {
@@ -101,6 +109,7 @@ export const nav: NavItem[] = [
       { href: "/notices", label: { bn: "নোটিশ বোর্ড", en: "Notice Board" } },
       { href: "/events", label: { bn: "কার্যক্রম ও অনুষ্ঠান", en: "Events" } },
       { href: "/gallery", label: { bn: "ফটো গ্যালারি", en: "Gallery" } },
+      { href: "/guardians", label: { bn: "অভিভাবকদের প্রতি", en: "For Guardians" } },
     ],
   },
   { href: "/donation", label: { bn: "অনুদান", en: "Donate" } },

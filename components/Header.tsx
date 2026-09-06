@@ -107,7 +107,7 @@ export function Header() {
                     scrolled ? "text-sm sm:text-base" : "text-base sm:text-lg"
                   }`}
                 >
-                  {lang === "bn" ? site.nameBn : site.nameEn}
+                  {lang === "bn" ? site.shortBn : site.shortEn}
                 </span>
                 <span className="hidden truncate text-[11px] tracking-wide text-cyan-200/70 sm:block">
                   {t(site.address)}

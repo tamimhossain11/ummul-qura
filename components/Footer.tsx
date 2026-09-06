@@ -60,6 +60,9 @@ export function Footer() {
           <p dir="rtl" className="font-arabic text-2xl text-gold-400 sm:text-3xl">
             {site.nameAr}
           </p>
+          <p dir="rtl" className="font-arabic mt-1 text-base text-gold-400/70 sm:text-lg">
+            {site.addressAr}
+          </p>
           <Ornament tone="light" className="mx-auto mt-3" />
         </div>
       </div>

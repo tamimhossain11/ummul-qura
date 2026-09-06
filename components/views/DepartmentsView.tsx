@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { departments } from "@/lib/content";
+import { academicRules, departments, wings } from "@/lib/content";
 import { DepartmentCard } from "../Cards";
 import { Icon } from "../Icon";
 import { useLang } from "../LanguageProvider";
@@ -15,7 +15,7 @@ export function DepartmentsView() {
     <>
       <PageHero
         title={{ bn: "শিক্ষা বিভাগসমূহ", en: "Departments of Study" }}
-        arabic="أقسام الجامعة"
+        arabic="أقسام التعليم"
         subtitle={{
           bn: "মক্তব থেকে কিতাব বিভাগ পর্যন্ত ধারাবাহিক পাঠক্রম — প্রতিটি স্তরে অভিজ্ঞ উস্তাদের নিবিড় তত্ত্বাবধান।",
           en: "A continuous course of study from Maktab to the Kitab department, each stage under the close care of experienced teachers.",
@@ -26,13 +26,52 @@ export function DepartmentsView() {
         <Container>
           <SectionHeading
             eyebrow={{ bn: "পাঠক্রম", en: "Curriculum" }}
-            title={{ bn: "ছয়টি বিভাগে বিন্যস্ত শিক্ষা কার্যক্রম", en: "Our Programme Across Six Departments" }}
+            title={{ bn: "চারটি বিভাগে বিন্যস্ত শিক্ষা কার্যক্রম", en: "Our Programme Across Four Departments" }}
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
             {departments.map((d) => (
               <DepartmentCard key={d.slug} department={d} />
             ))}
           </div>
+
+          <div className="mt-24">
+            <SectionHeading
+              eyebrow={{ bn: "সহায়ক শাখা", en: "Supporting Wings" }}
+              title={{ bn: "পাঠদানের সহায়ক শাখাসমূহ", en: "Wings That Support the Teaching" }}
+              arabic="الأقسام المساندة"
+            />
+          </div>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
+            {wings.map((w) => (
+              <DepartmentCard key={w.slug} department={w} />
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Departmental regulations */}
+      <section className="pb-20">
+        <Container>
+          <SectionHeading
+            eyebrow={{ bn: "নীতিমালা", en: "Regulations" }}
+            title={{ bn: "শিক্ষা বিভাগের বিশেষ নীতিমালা", en: "Regulations of the Departments of Study" }}
+            arabic="اللائحة الخاصة بقسم التعليم"
+          />
+          <ul className="mx-auto mt-14 grid max-w-5xl gap-4 lg:grid-cols-2">
+            {academicRules.map((rule, i) => (
+              <li
+                key={i}
+                className="flex items-start gap-3 rounded-2xl border border-navy-800/10 bg-white p-6 shadow-soft"
+              >
+                <Icon
+                  name="check"
+                  className="mt-1 h-4 w-4 shrink-0 text-gold-600"
+                  strokeWidth={2.4}
+                />
+                <span className="text-sm leading-relaxed text-navy-800/80">{t(rule)}</span>
+              </li>
+            ))}
+          </ul>
         </Container>
       </section>
 

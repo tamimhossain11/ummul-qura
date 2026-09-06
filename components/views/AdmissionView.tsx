@@ -96,6 +96,9 @@ export function AdmissionView() {
                 </li>
               ))}
             </ul>
+            <p className="mt-6 border-s-2 border-gold-400/60 ps-3.5 text-sm leading-relaxed text-navy-800/60">
+              {t(admission.documentsNote)}
+            </p>
           </div>
 
           <div className="rounded-2xl border border-navy-800/10 bg-white p-8 shadow-soft">
@@ -118,8 +121,134 @@ export function AdmissionView() {
         </Container>
       </section>
 
-      {/* Open departments + fees */}
+      {/* Eligibility */}
       <section className="py-20">
+        <Container>
+          <SectionHeading
+            eyebrow={{ bn: "যোগ্যতা", en: "Eligibility" }}
+            title={{ bn: "ভর্তি যোগ্যতা", en: "Who May Apply" }}
+            arabic="شروط القبول"
+          />
+          <div className="mt-14 grid gap-8 lg:grid-cols-2">
+            <div className="rounded-2xl border border-navy-800/10 bg-white p-8 shadow-soft">
+              <h3 className="flex items-center gap-3 text-xl font-bold text-navy-900">
+                <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-sky-100 text-teal-600">
+                  <Icon name="scroll" className="h-6 w-6" />
+                </span>
+                {lang === "bn" ? "কিতাব বিভাগে ভর্তির জন্য" : "For the Kitab department"}
+              </h3>
+              <span className="rule-gold my-5 block h-px w-full" />
+              <ul className="space-y-3.5">
+                {admission.eligibility.map((e, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-navy-800/80">
+                    <Icon name="check" className="mt-1 h-4 w-4 shrink-0 text-gold-600" strokeWidth={2.4} />
+                    {t(e)}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-navy-800/10 bg-white p-8 shadow-soft">
+              <h3 className="flex items-center gap-3 text-xl font-bold text-navy-900">
+                <span className="flex h-11 w-11 items-center justify-center rounded-lg bg-sky-100 text-teal-600">
+                  <Icon name="book-open" className="h-6 w-6" />
+                </span>
+                {lang === "bn" ? "জামাতভিত্তিক পূর্বপাঠ্য যোগ্যতা" : "Prior reading, by jamaat"}
+              </h3>
+              <span className="rule-gold my-5 block h-px w-full" />
+              <dl className="divide-y divide-navy-800/10">
+                {admission.jamaatPrerequisites.map((j, i) => (
+                  <div key={i} className="flex flex-wrap items-baseline gap-x-3 gap-y-1 py-3 first:pt-0 last:pb-0">
+                    <dt className="text-sm font-bold text-navy-900">{t(j.jamaat)}</dt>
+                    <dd className="text-sm text-navy-800/70">{t(j.requires)}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+          <p className="mx-auto mt-8 max-w-3xl rounded-xl border border-gold-400/50 bg-gold-200/25 px-6 py-4 text-center text-sm leading-relaxed text-navy-900">
+            {t(admission.eligibilityNote)}
+          </p>
+        </Container>
+      </section>
+
+      {/* Admission test */}
+      <section className="border-y border-navy-800/10 bg-sky-100/60 py-20">
+        <Container>
+          <SectionHeading
+            eyebrow={{ bn: "মূল্যায়ন", en: "Assessment" }}
+            title={{ bn: "ভর্তি পরীক্ষার নিয়ম", en: "The Admission Test" }}
+            arabic="اختبار القبول"
+          />
+          <ol className="mx-auto mt-14 grid max-w-5xl gap-5 lg:grid-cols-3">
+            {admission.testRules.map((r, i) => (
+              <li key={i} className="rounded-2xl border border-navy-800/10 bg-white p-7 shadow-soft">
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-navy-900 text-sm font-bold text-gold-400">
+                  {n(i + 1)}
+                </span>
+                <p className="mt-4 text-sm leading-relaxed text-navy-800/75">{t(r)}</p>
+              </li>
+            ))}
+          </ol>
+        </Container>
+      </section>
+
+      {/* Fees */}
+      <section className="py-20">
+        <Container>
+          <SectionHeading
+            eyebrow={{ bn: "ব্যয়", en: "Costs" }}
+            title={{ bn: "ভর্তি ও মাসিক ফি বিবরণ", en: "Admission and Monthly Fees" }}
+            arabic="الرسوم الدراسية"
+          />
+          <div className="mx-auto mt-14 max-w-4xl">
+            <div className="rounded-2xl border border-gold-400/50 bg-gold-200/25 p-8 text-center">
+              <p className="text-sm font-bold caps text-teal-600">
+                {t(admission.fees.admission.label)}
+              </p>
+              <p className="mt-3 text-4xl font-bold text-navy-900">
+                {t(admission.fees.admission.amount)}
+              </p>
+              <p className="mt-3 text-sm text-navy-800/70">{t(admission.fees.admission.note)}</p>
+            </div>
+
+            <h3 className="mt-12 text-center text-xl font-bold text-navy-900">
+              {lang === "bn" ? "মাসিক বেতন ও আবাসিক খরচ" : "Monthly and residential charges"}
+            </h3>
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              {admission.fees.monthly.map((m, i) => (
+                <article
+                  key={i}
+                  className="rounded-2xl border border-navy-800/10 bg-white p-7 text-center shadow-soft"
+                >
+                  <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-navy-800 to-teal-600 text-white">
+                    <Icon name="home" className="h-5 w-5" />
+                  </span>
+                  <h4 className="mt-4 text-base font-bold leading-snug text-navy-900">
+                    {t(m.label)}
+                  </h4>
+                  <p className="mt-3 text-2xl font-bold text-teal-600">{t(m.amount)}</p>
+                  <p className="mt-2 text-sm text-navy-800/60">{t(m.note)}</p>
+                </article>
+              ))}
+            </div>
+
+            <ul className="mt-8 space-y-3">
+              {admission.fees.notes.map((note, i) => (
+                <li
+                  key={i}
+                  className="border-s-2 border-gold-400/60 ps-4 text-sm leading-relaxed text-navy-800/70"
+                >
+                  {t(note)}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Container>
+      </section>
+
+      {/* Open departments + fees */}
+      <section className="pb-20">
         <Container>
           <SectionHeading
             eyebrow={{ bn: "ভর্তি চলছে", en: "Now Open" }}
@@ -151,7 +280,9 @@ export function AdmissionView() {
                       <td dir="rtl" className="font-arabic px-6 py-4 text-base text-navy-800/60">
                         {d.nameAr}
                       </td>
-                      <td className="px-6 py-4 text-navy-800/40 italic">—</td>
+                      <td className="px-6 py-4 text-navy-800/80">
+                        {t(admission.fees.admission.amount)}
+                      </td>
                       <td className="px-6 py-4 text-navy-800/40 italic">—</td>
                     </tr>
                   ))}
@@ -161,8 +292,8 @@ export function AdmissionView() {
           </div>
           <p className="mt-5 text-center text-sm text-navy-800/50">
             {lang === "bn"
-              ? "* ভর্তি ফি ও আসন সংখ্যা সংক্রান্ত হালনাগাদ তথ্যের জন্য জামিয়ার অফিসে যোগাযোগ করুন।"
-              : "* Please contact the Jamia office for up-to-date fees and seat availability."}
+              ? "* আসন সংখ্যা ও হালনাগাদ তথ্যের জন্য জামিয়ার অফিসে যোগাযোগ করুন।"
+              : "* Please contact the Jamia office for seat availability and up-to-date information."}
           </p>
         </Container>
       </section>

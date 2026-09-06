@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Amiri, Cormorant_Garamond, Hind_Siliguri } from "next/font/google";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import { ChatWidget } from "@/components/ChatWidget";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SocialRail } from "@/components/SocialRail";
@@ -32,10 +33,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://jamiaummulqura.com"),
   title: {
     default: `${site.nameBn} | ${site.nameEn}`,
-    template: `%s | ${site.nameBn}`,
+    template: `%s | ${site.shortBn}`,
   },
   description:
-    "জামিয়া উম্মুল কুরা আল-ইসলামিয়া, ফুলবাড়িয়া, সদর, ব্রাহ্মণবাড়িয়া — কুরআন, সুন্নাহ ও ইলমে দ্বীনের আলোকিত অঙ্গন। মক্তব, নাযেরা, হিফজুল কুরআন ও কিতাব বিভাগ।",
+    "জামিয়া উম্মুল কুরা আল ইসলামিয়া বাংলাদেশ, দাড়িয়াপুর, সদর, ব্রাহ্মণবাড়িয়া — কুরআন, সুন্নাহ ও ইলমে দ্বীনের আলোকিত অঙ্গন। মক্তব, নাযেরা, হিফজুল কুরআন ও কিতাব বিভাগ।",
   keywords: [
     "জামিয়া উম্মুল কুরা",
     "মাদরাসা",
@@ -79,6 +80,7 @@ export default function RootLayout({
             {children}
           </main>
           <SocialRail />
+          <ChatWidget />
           <Footer />
         </LanguageProvider>
       </body>

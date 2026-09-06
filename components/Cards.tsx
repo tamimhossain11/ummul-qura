@@ -68,7 +68,7 @@ export function DepartmentCard({ department }: { department: Department }) {
         <span className="inline-flex h-14 w-14 items-center justify-center rounded-xl bg-gradient-to-br from-navy-800 to-teal-600 text-white shadow-sm">
           <Icon name={department.icon as IconName} className="h-7 w-7" />
         </span>
-        <span dir="rtl" className="font-arabic text-lg text-navy-800/40">
+        <span dir="rtl" className="font-arabic max-w-[9.5rem] text-end text-base leading-snug text-navy-800/40">
           {department.nameAr}
         </span>
       </div>

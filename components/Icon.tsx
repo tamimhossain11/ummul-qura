@@ -2,7 +2,8 @@ type IconName =
   | "book-open" | "quran" | "star" | "scroll" | "pen" | "home"
   | "users" | "shield" | "utensils" | "chart" | "heart" | "mosque"
   | "phone" | "mail" | "pin" | "clock" | "arrow" | "check"
-  | "chevron" | "menu" | "close" | "calendar" | "bell" | "gift";
+  | "chevron" | "menu" | "close" | "calendar" | "bell" | "gift"
+  | "chat" | "send";
 
 const paths: Record<IconName, React.ReactNode> = {
   "book-open": <><path d="M12 6.5C10.5 5 8 4.3 4 4.5v13c4-.2 6.5.5 8 2 1.5-1.5 4-2.2 8-2v-13c-4-.2-6.5.5-8 2Z" /><path d="M12 6.5v13" /></>,
@@ -28,6 +29,8 @@ const paths: Record<IconName, React.ReactNode> = {
   close: <><path d="m6 6 12 12M18 6 6 18" /></>,
   calendar: <><rect x="3.5" y="5" width="17" height="15.5" rx="2" /><path d="M3.5 10h17M8 3v4M16 3v4" /></>,
   bell: <><path d="M6 9a6 6 0 1 1 12 0c0 4 1.5 5.5 1.5 5.5h-15S6 13 6 9Z" /><path d="M10 18a2 2 0 0 0 4 0" /></>,
+  chat: <><path d="M20.5 12c0 4.1-3.8 7.5-8.5 7.5-1 0-2-.2-2.9-.5L4 20.5l1.6-4A7 7 0 0 1 3.5 12c0-4.1 3.8-7.5 8.5-7.5s8.5 3.4 8.5 7.5Z" /><path d="M8.5 11h7M8.5 14h4.5" /></>,
+  send: <><path d="M20 4 3.5 10.5l6.5 2.5 2.5 6.5Z" /><path d="M10 13.5 20 4" /></>,
   gift: <><rect x="3.5" y="9" width="17" height="11.5" rx="1.5" /><path d="M3.5 13.5h17M12 9v11.5" /><path d="M12 9S10.8 4.5 8.5 4.5a2.2 2.2 0 0 0 0 4.5ZM12 9s1.2-4.5 3.5-4.5a2.2 2.2 0 0 1 0 4.5Z" /></>,
 };
 

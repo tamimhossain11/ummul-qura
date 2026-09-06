@@ -47,6 +47,13 @@ export function HomeView() {
               {site.nameAr}
             </p>
 
+            <p
+              dir="rtl"
+              className="font-arabic mt-1 text-center text-xl leading-[1.7] text-gold-400/75 sm:text-2xl lg:text-left"
+            >
+              {site.addressAr}
+            </p>
+
             <h1 className="mt-4 text-balance text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-[3.25rem]">
               {lang === "bn" ? site.nameBn : site.nameEn}
             </h1>
@@ -231,13 +238,13 @@ export function HomeView() {
           <SectionHeading
             eyebrow={{ bn: "শিক্ষা কার্যক্রম", en: "Academics" }}
             title={{ bn: "আমাদের শিক্ষা বিভাগসমূহ", en: "Our Departments of Study" }}
-            arabic="أقسام الجامعة"
+            arabic="أقسام التعليم"
             body={{
               bn: "মক্তব থেকে কিতাব বিভাগ পর্যন্ত ধারাবাহিক ও সুবিন্যস্ত পাঠক্রম, প্রতিটি স্তরে অভিজ্ঞ উস্তাদের তত্ত্বাবধান।",
               en: "A continuous, carefully graded curriculum from Maktab to the Kitab department, each stage guided by experienced teachers.",
             }}
           />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2">
             {departments.map((d) => (
               <DepartmentCard key={d.slug} department={d} />
             ))}
