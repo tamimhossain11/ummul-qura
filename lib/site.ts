@@ -18,7 +18,7 @@ export const site = {
     en: "Dariapur, Sadar, Brahmanbaria, Bangladesh",
   } satisfies T,
   /** Shown beneath the Arabic name, on the hero and the footer band. */
-  addressAr: "دريافور، صدر برهمن باريا",
+  addressAr: "دريافور، صدر، برهمن باريا",
 
   /** The madrasah's single contact number — also the Principal's. */
   phone: {
